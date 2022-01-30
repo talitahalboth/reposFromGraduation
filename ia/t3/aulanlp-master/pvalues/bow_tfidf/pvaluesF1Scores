@@ -1,0 +1,30 @@
+All words                     0.8164
+Remove words used 90% or more 0.8149
+0.3250907987736353
+0.3731410727703204
+
+All words                     0.8164
+Remove words used 80% or more 0.8050
+2.098054399157248
+0.020256883879710936
+
+All words                     0.8164
+Remove words used 70% or more 0.8112
+1.1369604998582143
+0.1301287169105156
+
+All words                     0.8164
+Remove words used 30% or less 0.6537
+32.859403431643926
+2.307825816232706e-39
+
+All words                     0.8164
+Remove words used 20% or less 0.6949
+26.26140185754642
+4.229978952950791e-34
+
+All words                     0.8164
+Remove words used 10% or less 0.7049
+20.46621958136223
+1.0326054899729981e-27
+

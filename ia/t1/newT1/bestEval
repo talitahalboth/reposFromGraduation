@@ -1,0 +1,92 @@
+Executando Algoritmo Genético...
+[0.2, 1, 2, 0]
+TSP_berlin10
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo medio: 4889.0
+Desvio padrao: 0.0
+Tempo medio: 0.2687338352203369 segundos
+TSP_berlin15
+Custo do caminho: 4967
+Custo do caminho: 4967
+Custo do caminho: 4977
+Custo do caminho: 4967
+Custo do caminho: 4967
+Custo do caminho: 4967
+Custo do caminho: 4967
+Custo do caminho: 4977
+Custo do caminho: 4977
+Custo do caminho: 4967
+Custo medio: 4970.0
+Desvio padrao: 4.83045891539648
+Tempo medio: 0.8471756219863892 segundos
+TSP_berlin16
+Custo do caminho: 5037
+Custo do caminho: 5027
+Custo do caminho: 5037
+Custo do caminho: 5037
+Custo do caminho: 5037
+Custo do caminho: 5037
+Custo do caminho: 5037
+Custo do caminho: 5027
+Custo do caminho: 5027
+Custo do caminho: 5037
+Custo medio: 5034.0
+Desvio padrao: 4.83045891539648
+Tempo medio: 0.9632587194442749 segundos
+TSP_dj38
+Custo do caminho: 6656
+Custo do caminho: 6656
+Custo do caminho: 6656
+Custo do caminho: 6656
+Custo do caminho: 6656
+Custo do caminho: 6656
+Custo do caminho: 6656
+Custo do caminho: 6656
+Custo do caminho: 6775
+Custo do caminho: 6656
+Custo medio: 6667.9
+Desvio padrao: 37.631104156003715
+Tempo medio: 6.426946926116943 segundos
+TSP_berlin52
+Custo do caminho: 7614
+Custo do caminho: 7542
+Custo do caminho: 7542
+Custo do caminho: 7542
+Custo do caminho: 7542
+Custo do caminho: 7618
+Custo do caminho: 7543
+Custo do caminho: 7542
+Custo do caminho: 7542
+Custo do caminho: 7542
+Custo medio: 7556.9
+Desvio padrao: 31.164260156645962
+Tempo medio: 21.675931024551392 segundos
+TSP_eil51
+Custo do caminho: 434
+Custo do caminho: 426
+Custo do caminho: 428
+Custo do caminho: 429
+Custo do caminho: 426
+Custo do caminho: 427
+Custo do caminho: 427
+Custo do caminho: 431
+Custo do caminho: 427
+Custo do caminho: 429
+Custo medio: 428.4
+Desvio padrao: 2.503331114069145
+Tempo medio: 21.512023830413817 segundos
+4924.366666666668
+[4889.0, 4970.0, 5034.0, 6667.9, 7556.9, 428.4]
+8.61567832628886
+[0.2687338352203369, 0.8471756219863892, 0.9632587194442749, 6.426946926116943, 21.675931024551392, 21.512023830413817]
+[0.2, 1, 2, 0]
+[0.0, 0.06039863096436481, 0.1392480604734434, 0.1787860576923022, 0.1975603288252405, 0.5633802816901355]

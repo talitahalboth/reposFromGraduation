@@ -1,0 +1,92 @@
+Executando Algoritmo Genético...
+[0.2, 1, 2, 0]
+TSP_berlin10
+Custo do caminho: 5569
+Custo do caminho: 5585
+Custo do caminho: 4999
+Custo do caminho: 5379
+Custo do caminho: 5141
+Custo do caminho: 5247
+Custo do caminho: 5193
+Custo do caminho: 5059
+Custo do caminho: 4965
+Custo do caminho: 5446
+Custo medio: 5258.3
+Desvio padrao: 227.107439087514
+Tempo medio: 0.03242828845977783 segundos
+TSP_berlin15
+Custo do caminho: 7068
+Custo do caminho: 7572
+Custo do caminho: 6847
+Custo do caminho: 7239
+Custo do caminho: 5649
+Custo do caminho: 7060
+Custo do caminho: 7004
+Custo do caminho: 6909
+Custo do caminho: 6137
+Custo do caminho: 6742
+Custo medio: 6822.7
+Desvio padrao: 552.4104854584536
+Tempo medio: 0.04920499324798584 segundos
+TSP_berlin16
+Custo do caminho: 6597
+Custo do caminho: 6250
+Custo do caminho: 7488
+Custo do caminho: 6444
+Custo do caminho: 6750
+Custo do caminho: 6164
+Custo do caminho: 7457
+Custo do caminho: 7217
+Custo do caminho: 7179
+Custo do caminho: 6958
+Custo medio: 6850.4
+Desvio padrao: 482.99141929346024
+Tempo medio: 0.06117253303527832 segundos
+TSP_dj38
+Custo do caminho: 19213
+Custo do caminho: 19266
+Custo do caminho: 19730
+Custo do caminho: 18965
+Custo do caminho: 19069
+Custo do caminho: 20278
+Custo do caminho: 18521
+Custo do caminho: 19133
+Custo do caminho: 19724
+Custo do caminho: 19844
+Custo medio: 19374.3
+Desvio padrao: 513.2610446936335
+Tempo medio: 0.22519218921661377 segundos
+TSP_berlin52
+Custo do caminho: 19935
+Custo do caminho: 21708
+Custo do caminho: 21387
+Custo do caminho: 22913
+Custo do caminho: 24002
+Custo do caminho: 22642
+Custo do caminho: 21353
+Custo do caminho: 22050
+Custo do caminho: 20782
+Custo do caminho: 22897
+Custo medio: 21966.9
+Desvio padrao: 1186.8389809349314
+Tempo medio: 0.31750543117523194 segundos
+TSP_eil51
+Custo do caminho: 1275
+Custo do caminho: 1317
+Custo do caminho: 1196
+Custo do caminho: 1307
+Custo do caminho: 1282
+Custo do caminho: 1132
+Custo do caminho: 1313
+Custo do caminho: 1309
+Custo do caminho: 1290
+Custo do caminho: 1291
+Custo medio: 1271.2
+Desvio padrao: 60.05886001804119
+Tempo medio: 0.327378511428833 segundos
+10257.3
+[5258.3, 6822.7, 6850.4, 19374.3, 21966.9, 1271.2]
+0.1688136577606201
+[0.03242828845977783, 0.04920499324798584, 0.06117253303527832, 0.22519218921661377, 0.31750543117523194, 0.327378511428833]
+[0.2, 1, 2, 0]
+[7.553691961546333, 37.360579826857254, 36.272130495325236, 191.0802283653846, 191.260938743039, 198.4037558685446]

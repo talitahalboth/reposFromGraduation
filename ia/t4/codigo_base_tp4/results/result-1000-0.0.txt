@@ -1,0 +1,60 @@
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000
+Taxa de sucesso no treinamento: 0/1000
+Taxa de sucesso na validação : 0/1000

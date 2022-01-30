@@ -1,0 +1,990 @@
+Executando Algoritmo Genético...
+[0.5, 0, 0, 0]
+TSP_berlin10
+Custo do caminho: 5838
+Custo do caminho: 4965
+Custo do caminho: 4998
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo medio: 5115.8
+Tempo medio: 0.3983923435211182 segundos
+TSP_berlin15
+Custo do caminho: 5525
+Custo do caminho: 4977
+Custo do caminho: 7896
+Custo do caminho: 8580
+Custo do caminho: 4967
+Custo medio: 6389.0
+Tempo medio: 2.0037670135498047 segundos
+TSP_berlin16
+Custo do caminho: 8375
+Custo do caminho: 5093
+Custo do caminho: 8997
+Custo do caminho: 5471
+Custo do caminho: 5073
+Custo medio: 6601.8
+Tempo medio: 2.2339041233062744 segundos
+TSP_dj38
+Custo do caminho: 23251
+Custo do caminho: 9851
+Custo do caminho: 8431
+Custo do caminho: 9308
+Custo do caminho: 19048
+Custo medio: 13977.8
+Tempo medio: 53.11119441986084 segundos
+TSP_berlin52
+Custo do caminho: 26065
+Custo do caminho: 10475
+Custo do caminho: 22499
+Custo do caminho: 10163
+Custo do caminho: 26467
+Custo medio: 19133.8
+Tempo medio: 58.40082607269287 segundos
+TSP_eil51
+Custo do caminho: 1400
+Custo do caminho: 1398
+Custo do caminho: 617
+Custo do caminho: 1438
+Custo do caminho: 530
+Custo medio: 1076.6
+Tempo medio: 59.96488409042358 segundos
+Executando Algoritmo Genético...
+[0.5, 0, 0, 1]
+TSP_berlin10
+Custo do caminho: 5238
+Custo do caminho: 5862
+Custo do caminho: 6029
+Custo do caminho: 5400
+Custo do caminho: 5375
+Custo medio: 5580.8
+Tempo medio: 0.0569089412689209 segundos
+TSP_berlin15
+Custo do caminho: 8268
+Custo do caminho: 7290
+Custo do caminho: 7402
+Custo do caminho: 8687
+Custo do caminho: 7914
+Custo medio: 7912.2
+Tempo medio: 0.23217062950134276 segundos
+TSP_berlin16
+Custo do caminho: 8849
+Custo do caminho: 5843
+Custo do caminho: 8435
+Custo do caminho: 8236
+Custo do caminho: 8876
+Custo medio: 8047.8
+Tempo medio: 0.17110071182250977 segundos
+TSP_dj38
+Custo do caminho: 23737
+Custo do caminho: 23631
+Custo do caminho: 22821
+Custo do caminho: 22583
+Custo do caminho: 21336
+Custo medio: 22821.6
+Tempo medio: 0.17925376892089845 segundos
+TSP_berlin52
+Custo do caminho: 26317
+Custo do caminho: 26377
+Custo do caminho: 25656
+Custo do caminho: 25408
+Custo do caminho: 24472
+Custo medio: 25646.0
+Tempo medio: 0.23480143547058105 segundos
+TSP_eil51
+Custo do caminho: 1436
+Custo do caminho: 1369
+Custo do caminho: 1451
+Custo do caminho: 1420
+Custo do caminho: 1447
+Custo medio: 1424.6
+Tempo medio: 0.16960744857788085 segundos
+Executando Algoritmo Genético...
+[0.5, 0, 0, 2]
+TSP_berlin10
+Custo do caminho: 5034
+Custo do caminho: 5357
+Custo do caminho: 5192
+Custo do caminho: 5745
+Custo do caminho: 5517
+Custo medio: 5369.0
+Tempo medio: 0.25680055618286135 segundos
+TSP_berlin15
+Custo do caminho: 9011
+Custo do caminho: 7620
+Custo do caminho: 6002
+Custo do caminho: 7274
+Custo do caminho: 8035
+Custo medio: 7588.4
+Tempo medio: 1.4411218643188477 segundos
+TSP_berlin16
+Custo do caminho: 8097
+Custo do caminho: 7338
+Custo do caminho: 8209
+Custo do caminho: 9278
+Custo do caminho: 7611
+Custo medio: 8106.6
+Tempo medio: 0.1365208625793457 segundos
+TSP_dj38
+Custo do caminho: 22027
+Custo do caminho: 22497
+Custo do caminho: 24673
+Custo do caminho: 23211
+Custo do caminho: 24231
+Custo medio: 23327.8
+Tempo medio: 0.15006308555603026 segundos
+TSP_berlin52
+Custo do caminho: 24755
+Custo do caminho: 25322
+Custo do caminho: 25730
+Custo do caminho: 26647
+Custo do caminho: 25807
+Custo medio: 25652.2
+Tempo medio: 0.35533447265625 segundos
+TSP_eil51
+Custo do caminho: 1425
+Custo do caminho: 1514
+Custo do caminho: 1457
+Custo do caminho: 1379
+Custo do caminho: 1504
+Custo medio: 1455.8
+Tempo medio: 0.3437223434448242 segundos
+Executando Algoritmo Genético...
+[0.5, 0, 1, 0]
+TSP_berlin10
+Custo do caminho: 5085
+Custo do caminho: 5157
+Custo do caminho: 4889
+Custo do caminho: 5751
+Custo do caminho: 4999
+Custo medio: 5176.2
+Tempo medio: 0.25694713592529295 segundos
+TSP_berlin15
+Custo do caminho: 5063
+Custo do caminho: 6959
+Custo do caminho: 7535
+Custo do caminho: 4967
+Custo do caminho: 5061
+Custo medio: 5917.0
+Tempo medio: 1.467885398864746 segundos
+TSP_berlin16
+Custo do caminho: 5037
+Custo do caminho: 5072
+Custo do caminho: 5053
+Custo do caminho: 8601
+Custo do caminho: 5093
+Custo medio: 5771.2
+Tempo medio: 1.385447120666504 segundos
+TSP_dj38
+Custo do caminho: 8734
+Custo do caminho: 10478
+Custo do caminho: 10047
+Custo do caminho: 11097
+Custo do caminho: 8966
+Custo medio: 9864.4
+Tempo medio: 25.09055314064026 segundos
+TSP_berlin52
+Custo do caminho: 9727
+Custo do caminho: 25187
+Custo do caminho: 10176
+Custo do caminho: 10895
+Custo do caminho: 24546
+Custo medio: 16106.2
+Tempo medio: 54.23698096275329 segundos
+TSP_eil51
+Custo do caminho: 606
+Custo do caminho: 1370
+Custo do caminho: 582
+Custo do caminho: 554
+Custo do caminho: 568
+Custo medio: 736.0
+Tempo medio: 50.01400227546692 segundos
+Executando Algoritmo Genético...
+[0.5, 0, 1, 1]
+TSP_berlin10
+Custo do caminho: 6128
+Custo do caminho: 5789
+Custo do caminho: 5648
+Custo do caminho: 5159
+Custo do caminho: 5553
+Custo medio: 5655.4
+Tempo medio: 0.05779685974121094 segundos
+TSP_berlin15
+Custo do caminho: 8360
+Custo do caminho: 8060
+Custo do caminho: 8597
+Custo do caminho: 7322
+Custo do caminho: 7551
+Custo medio: 7978.0
+Tempo medio: 0.07609763145446777 segundos
+TSP_berlin16
+Custo do caminho: 8033
+Custo do caminho: 6775
+Custo do caminho: 9120
+Custo do caminho: 8248
+Custo do caminho: 8877
+Custo medio: 8210.6
+Tempo medio: 0.06672921180725097 segundos
+TSP_dj38
+Custo do caminho: 21752
+Custo do caminho: 22442
+Custo do caminho: 20455
+Custo do caminho: 24303
+Custo do caminho: 22793
+Custo medio: 22349.0
+Tempo medio: 0.5091698169708252 segundos
+TSP_berlin52
+Custo do caminho: 27075
+Custo do caminho: 26407
+Custo do caminho: 24959
+Custo do caminho: 25374
+Custo do caminho: 24703
+Custo medio: 25703.6
+Tempo medio: 0.2963859081268311 segundos
+TSP_eil51
+Custo do caminho: 1404
+Custo do caminho: 1444
+Custo do caminho: 1434
+Custo do caminho: 1371
+Custo do caminho: 1478
+Custo medio: 1426.2
+Tempo medio: 0.16962852478027343 segundos
+Executando Algoritmo Genético...
+[0.5, 0, 1, 2]
+TSP_berlin10
+Custo do caminho: 5605
+Custo do caminho: 5059
+Custo do caminho: 5473
+Custo do caminho: 5717
+Custo do caminho: 5496
+Custo medio: 5470.0
+Tempo medio: 0.27799015045166015 segundos
+TSP_berlin15
+Custo do caminho: 9359
+Custo do caminho: 8809
+Custo do caminho: 7464
+Custo do caminho: 7804
+Custo do caminho: 8588
+Custo medio: 8404.8
+Tempo medio: 0.10374884605407715 segundos
+TSP_berlin16
+Custo do caminho: 7955
+Custo do caminho: 8547
+Custo do caminho: 9029
+Custo do caminho: 8175
+Custo do caminho: 8786
+Custo medio: 8498.4
+Tempo medio: 0.1063769817352295 segundos
+TSP_dj38
+Custo do caminho: 23625
+Custo do caminho: 24716
+Custo do caminho: 23601
+Custo do caminho: 23791
+Custo do caminho: 23517
+Custo medio: 23850.0
+Tempo medio: 0.3285238742828369 segundos
+TSP_berlin52
+Custo do caminho: 26428
+Custo do caminho: 25211
+Custo do caminho: 24458
+Custo do caminho: 25834
+Custo do caminho: 26430
+Custo medio: 25672.2
+Tempo medio: 0.19860105514526366 segundos
+TSP_eil51
+Custo do caminho: 1388
+Custo do caminho: 1440
+Custo do caminho: 1334
+Custo do caminho: 1449
+Custo do caminho: 1415
+Custo medio: 1405.2
+Tempo medio: 1.1045852184295655 segundos
+Executando Algoritmo Genético...
+[0.5, 0, 2, 0]
+TSP_berlin10
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo medio: 4889.0
+Tempo medio: 0.46157174110412597 segundos
+TSP_berlin15
+Custo do caminho: 4977
+Custo do caminho: 4967
+Custo do caminho: 4967
+Custo do caminho: 4967
+Custo do caminho: 4977
+Custo medio: 4971.0
+Tempo medio: 1.2270403385162354 segundos
+TSP_berlin16
+Custo do caminho: 5037
+Custo do caminho: 5037
+Custo do caminho: 5027
+Custo do caminho: 5037
+Custo do caminho: 5027
+Custo medio: 5033.0
+Tempo medio: 1.602842378616333 segundos
+TSP_dj38
+Custo do caminho: 6703
+Custo do caminho: 6656
+Custo do caminho: 6656
+Custo do caminho: 6702
+Custo do caminho: 6656
+Custo medio: 6674.6
+Tempo medio: 12.80715389251709 segundos
+TSP_berlin52
+Custo do caminho: 7715
+Custo do caminho: 7543
+Custo do caminho: 7925
+Custo do caminho: 7542
+Custo do caminho: 7542
+Custo medio: 7653.4
+Tempo medio: 27.695600080490113 segundos
+TSP_eil51
+Custo do caminho: 428
+Custo do caminho: 427
+Custo do caminho: 432
+Custo do caminho: 429
+Custo do caminho: 427
+Custo medio: 428.6
+Tempo medio: 28.77814049720764 segundos
+Executando Algoritmo Genético...
+[0.5, 0, 2, 1]
+TSP_berlin10
+Custo do caminho: 4965
+Custo do caminho: 5018
+Custo do caminho: 4987
+Custo do caminho: 4889
+Custo do caminho: 5211
+Custo medio: 5014.0
+Tempo medio: 0.499268627166748 segundos
+TSP_berlin15
+Custo do caminho: 5074
+Custo do caminho: 5001
+Custo do caminho: 5773
+Custo do caminho: 5539
+Custo do caminho: 4998
+Custo medio: 5277.0
+Tempo medio: 2.432568407058716 segundos
+TSP_berlin16
+Custo do caminho: 5039
+Custo do caminho: 5366
+Custo do caminho: 5053
+Custo do caminho: 5368
+Custo do caminho: 5156
+Custo medio: 5196.4
+Tempo medio: 2.8990583419799805 segundos
+TSP_dj38
+Custo do caminho: 7736
+Custo do caminho: 7909
+Custo do caminho: 7541
+Custo do caminho: 7093
+Custo do caminho: 7240
+Custo medio: 7503.8
+Tempo medio: 63.717340564727785 segundos
+TSP_berlin52
+Custo do caminho: 8850
+Custo do caminho: 8942
+Custo do caminho: 8756
+Custo do caminho: 8774
+Custo do caminho: 8902
+Custo medio: 8844.8
+Tempo medio: 281.6893877983093 segundos
+TSP_eil51
+Custo do caminho: 544
+Custo do caminho: 478
+Custo do caminho: 488
+Custo do caminho: 513
+Custo do caminho: 488
+Custo medio: 502.2
+Tempo medio: 103.74477062225341 segundos
+Executando Algoritmo Genético...
+[0.5, 0, 2, 2]
+TSP_berlin10
+Custo do caminho: 5157
+Custo do caminho: 5140
+Custo do caminho: 5369
+Custo do caminho: 4965
+Custo do caminho: 5068
+Custo medio: 5139.8
+Tempo medio: 0.30727391242980956 segundos
+TSP_berlin15
+Custo do caminho: 4967
+Custo do caminho: 4967
+Custo do caminho: 4967
+Custo do caminho: 6924
+Custo do caminho: 4967
+Custo medio: 5358.4
+Tempo medio: 10.127537822723388 segundos
+TSP_berlin16
+Custo do caminho: 5037
+Custo do caminho: 5040
+Custo do caminho: 6297
+Custo do caminho: 5123
+Custo do caminho: 5692
+Custo medio: 5437.8
+Tempo medio: 3.8206384658813475 segundos
+TSP_dj38
+Custo do caminho: 6656
+Custo do caminho: 6657
+Custo do caminho: 6656
+Custo do caminho: 6656
+Custo do caminho: 6657
+Custo medio: 6656.4
+Tempo medio: 196.5731632232666 segundos
+TSP_berlin52
+Custo do caminho: 8076
+Custo do caminho: 7543
+Custo do caminho: 7542
+Custo do caminho: 8242
+Custo do caminho: 8529
+Custo medio: 7986.4
+Tempo medio: 336.38654084205626 segundos
+TSP_eil51
+Custo do caminho: 1348
+Custo do caminho: 451
+Custo do caminho: 1225
+Custo do caminho: 444
+Custo do caminho: 1200
+Custo medio: 933.6
+Tempo medio: 58.48349781036377 segundos
+Executando Algoritmo Genético...
+[0.5, 1, 0, 0]
+TSP_berlin10
+Custo do caminho: 4889
+Custo do caminho: 5623
+Custo do caminho: 5263
+Custo do caminho: 5403
+Custo do caminho: 5211
+Custo medio: 5277.8
+Tempo medio: 0.021771860122680665 segundos
+TSP_berlin15
+Custo do caminho: 7646
+Custo do caminho: 5087
+Custo do caminho: 5625
+Custo do caminho: 5072
+Custo do caminho: 5072
+Custo medio: 5700.4
+Tempo medio: 0.1700878143310547 segundos
+TSP_berlin16
+Custo do caminho: 5113
+Custo do caminho: 8517
+Custo do caminho: 8564
+Custo do caminho: 5037
+Custo do caminho: 5037
+Custo medio: 6453.6
+Tempo medio: 0.24279189109802246 segundos
+TSP_dj38
+Custo do caminho: 8290
+Custo do caminho: 22687
+Custo do caminho: 22817
+Custo do caminho: 9535
+Custo do caminho: 8149
+Custo medio: 14295.6
+Tempo medio: 2.7853113174438477 segundos
+TSP_berlin52
+Custo do caminho: 26221
+Custo do caminho: 10678
+Custo do caminho: 10488
+Custo do caminho: 10361
+Custo do caminho: 25004
+Custo medio: 16550.4
+Tempo medio: 7.951338815689087 segundos
+TSP_eil51
+Custo do caminho: 1452
+Custo do caminho: 629
+Custo do caminho: 615
+Custo do caminho: 602
+Custo do caminho: 551
+Custo medio: 769.8
+Tempo medio: 9.173514699935913 segundos
+Executando Algoritmo Genético...
+[0.5, 1, 0, 1]
+TSP_berlin10
+Custo do caminho: 5214
+Custo do caminho: 5409
+Custo do caminho: 5321
+Custo do caminho: 6274
+Custo do caminho: 5159
+Custo medio: 5475.4
+Tempo medio: 0.006378793716430664 segundos
+TSP_berlin15
+Custo do caminho: 8146
+Custo do caminho: 7839
+Custo do caminho: 7964
+Custo do caminho: 8820
+Custo do caminho: 7158
+Custo medio: 7985.4
+Tempo medio: 0.004165506362915039 segundos
+TSP_berlin16
+Custo do caminho: 8397
+Custo do caminho: 8201
+Custo do caminho: 7853
+Custo do caminho: 8691
+Custo do caminho: 8635
+Custo medio: 8355.4
+Tempo medio: 0.007127189636230468 segundos
+TSP_dj38
+Custo do caminho: 22655
+Custo do caminho: 23418
+Custo do caminho: 21913
+Custo do caminho: 24621
+Custo do caminho: 22349
+Custo medio: 22991.2
+Tempo medio: 0.012893342971801757 segundos
+TSP_berlin52
+Custo do caminho: 25571
+Custo do caminho: 21457
+Custo do caminho: 26552
+Custo do caminho: 25863
+Custo do caminho: 26292
+Custo medio: 25147.0
+Tempo medio: 0.08957095146179199 segundos
+TSP_eil51
+Custo do caminho: 1243
+Custo do caminho: 1437
+Custo do caminho: 1385
+Custo do caminho: 1450
+Custo do caminho: 1409
+Custo medio: 1384.8
+Tempo medio: 0.03501806259155273 segundos
+Executando Algoritmo Genético...
+[0.5, 1, 0, 2]
+TSP_berlin10
+Custo do caminho: 5542
+Custo do caminho: 5975
+Custo do caminho: 6168
+Custo do caminho: 6141
+Custo do caminho: 5067
+Custo medio: 5778.6
+Tempo medio: 0.3074202537536621 segundos
+TSP_berlin15
+Custo do caminho: 7948
+Custo do caminho: 8096
+Custo do caminho: 7979
+Custo do caminho: 9333
+Custo do caminho: 7256
+Custo medio: 8122.4
+Tempo medio: 0.0465904712677002 segundos
+TSP_berlin16
+Custo do caminho: 7497
+Custo do caminho: 7199
+Custo do caminho: 8132
+Custo do caminho: 8230
+Custo do caminho: 8475
+Custo medio: 7906.6
+Tempo medio: 0.08661608695983887 segundos
+TSP_dj38
+Custo do caminho: 22968
+Custo do caminho: 23587
+Custo do caminho: 21930
+Custo do caminho: 21507
+Custo do caminho: 21924
+Custo medio: 22383.2
+Tempo medio: 0.13241186141967773 segundos
+TSP_berlin52
+Custo do caminho: 24567
+Custo do caminho: 25900
+Custo do caminho: 26031
+Custo do caminho: 25342
+Custo do caminho: 26276
+Custo medio: 25623.2
+Tempo medio: 0.513812255859375 segundos
+TSP_eil51
+Custo do caminho: 1435
+Custo do caminho: 1474
+Custo do caminho: 1329
+Custo do caminho: 1340
+Custo do caminho: 1442
+Custo medio: 1404.0
+Tempo medio: 0.45461788177490237 segundos
+Executando Algoritmo Genético...
+[0.5, 1, 1, 0]
+TSP_berlin10
+Custo do caminho: 5511
+Custo do caminho: 4965
+Custo do caminho: 4965
+Custo do caminho: 4965
+Custo do caminho: 5627
+Custo medio: 5206.6
+Tempo medio: 0.036430072784423825 segundos
+TSP_berlin15
+Custo do caminho: 7761
+Custo do caminho: 5037
+Custo do caminho: 4977
+Custo do caminho: 5037
+Custo do caminho: 5063
+Custo medio: 5575.0
+Tempo medio: 0.17693672180175782 segundos
+TSP_berlin16
+Custo do caminho: 5079
+Custo do caminho: 5053
+Custo do caminho: 8343
+Custo do caminho: 5077
+Custo do caminho: 5063
+Custo medio: 5723.0
+Tempo medio: 0.20157408714294434 segundos
+TSP_dj38
+Custo do caminho: 9758
+Custo do caminho: 9746
+Custo do caminho: 11613
+Custo do caminho: 7669
+Custo do caminho: 7333
+Custo medio: 9223.8
+Tempo medio: 2.2421629428863525 segundos
+TSP_berlin52
+Custo do caminho: 10517
+Custo do caminho: 10382
+Custo do caminho: 10553
+Custo do caminho: 26155
+Custo do caminho: 10377
+Custo medio: 13596.8
+Tempo medio: 4.854866790771484 segundos
+TSP_eil51
+Custo do caminho: 528
+Custo do caminho: 1333
+Custo do caminho: 1446
+Custo do caminho: 572
+Custo do caminho: 1459
+Custo medio: 1067.6
+Tempo medio: 2.0026340961456297 segundos
+Executando Algoritmo Genético...
+[0.5, 1, 1, 1]
+TSP_berlin10
+Custo do caminho: 5123
+Custo do caminho: 5666
+Custo do caminho: 5378
+Custo do caminho: 5566
+Custo do caminho: 5642
+Custo medio: 5475.0
+Tempo medio: 0.03012051582336426 segundos
+TSP_berlin15
+Custo do caminho: 7126
+Custo do caminho: 8342
+Custo do caminho: 7643
+Custo do caminho: 7829
+Custo do caminho: 7869
+Custo medio: 7761.8
+Tempo medio: 0.010150289535522461 segundos
+TSP_berlin16
+Custo do caminho: 7535
+Custo do caminho: 7933
+Custo do caminho: 7370
+Custo do caminho: 8527
+Custo do caminho: 7547
+Custo medio: 7782.4
+Tempo medio: 0.025646352767944337 segundos
+TSP_dj38
+Custo do caminho: 23672
+Custo do caminho: 23637
+Custo do caminho: 21854
+Custo do caminho: 21877
+Custo do caminho: 20145
+Custo medio: 22237.0
+Tempo medio: 0.06002793312072754 segundos
+TSP_berlin52
+Custo do caminho: 25994
+Custo do caminho: 25167
+Custo do caminho: 23221
+Custo do caminho: 26564
+Custo do caminho: 23837
+Custo medio: 24956.6
+Tempo medio: 0.03269214630126953 segundos
+TSP_eil51
+Custo do caminho: 1380
+Custo do caminho: 1379
+Custo do caminho: 1415
+Custo do caminho: 1356
+Custo do caminho: 1430
+Custo medio: 1392.0
+Tempo medio: 0.013988971710205078 segundos
+Executando Algoritmo Genético...
+[0.5, 1, 1, 2]
+TSP_berlin10
+Custo do caminho: 5518
+Custo do caminho: 5194
+Custo do caminho: 5482
+Custo do caminho: 5643
+Custo do caminho: 5459
+Custo medio: 5459.2
+Tempo medio: 0.21068639755249025 segundos
+TSP_berlin15
+Custo do caminho: 8274
+Custo do caminho: 7547
+Custo do caminho: 7711
+Custo do caminho: 7923
+Custo do caminho: 8262
+Custo medio: 7943.4
+Tempo medio: 0.12112741470336914 segundos
+TSP_berlin16
+Custo do caminho: 8418
+Custo do caminho: 7462
+Custo do caminho: 7673
+Custo do caminho: 9409
+Custo do caminho: 9081
+Custo medio: 8408.6
+Tempo medio: 0.06786599159240722 segundos
+TSP_dj38
+Custo do caminho: 22726
+Custo do caminho: 19736
+Custo do caminho: 21617
+Custo do caminho: 22620
+Custo do caminho: 23842
+Custo medio: 22108.2
+Tempo medio: 0.20703668594360353 segundos
+TSP_berlin52
+Custo do caminho: 25440
+Custo do caminho: 26315
+Custo do caminho: 25753
+Custo do caminho: 25851
+Custo do caminho: 27063
+Custo medio: 26084.4
+Tempo medio: 0.17314658164978028 segundos
+TSP_eil51
+Custo do caminho: 1417
+Custo do caminho: 1374
+Custo do caminho: 1419
+Custo do caminho: 1413
+Custo do caminho: 1403
+Custo medio: 1405.2
+Tempo medio: 0.26377062797546386 segundos
+Executando Algoritmo Genético...
+[0.5, 1, 2, 0]
+TSP_berlin10
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo medio: 4889.0
+Tempo medio: 0.2105027675628662 segundos
+TSP_berlin15
+Custo do caminho: 4967
+Custo do caminho: 4967
+Custo do caminho: 4967
+Custo do caminho: 4977
+Custo do caminho: 4967
+Custo medio: 4969.0
+Tempo medio: 1.0063772201538086 segundos
+TSP_berlin16
+Custo do caminho: 5027
+Custo do caminho: 5037
+Custo do caminho: 5027
+Custo do caminho: 5027
+Custo do caminho: 5037
+Custo medio: 5031.0
+Tempo medio: 1.1894007205963135 segundos
+TSP_dj38
+Custo do caminho: 6656
+Custo do caminho: 6656
+Custo do caminho: 6703
+Custo do caminho: 6656
+Custo do caminho: 6656
+Custo medio: 6665.4
+Tempo medio: 11.228429222106934 segundos
+TSP_berlin52
+Custo do caminho: 7715
+Custo do caminho: 7732
+Custo do caminho: 7596
+Custo do caminho: 7668
+Custo do caminho: 7547
+Custo medio: 7651.6
+Tempo medio: 19.74295129776001 segundos
+TSP_eil51
+Custo do caminho: 427
+Custo do caminho: 431
+Custo do caminho: 428
+Custo do caminho: 431
+Custo do caminho: 426
+Custo medio: 428.6
+Tempo medio: 27.333175563812254 segundos
+Executando Algoritmo Genético...
+[0.5, 1, 2, 1]
+TSP_berlin10
+Custo do caminho: 5246
+Custo do caminho: 4999
+Custo do caminho: 5183
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo medio: 5041.2
+Tempo medio: 0.17879276275634765 segundos
+TSP_berlin15
+Custo do caminho: 5291
+Custo do caminho: 4995
+Custo do caminho: 5037
+Custo do caminho: 4980
+Custo do caminho: 6523
+Custo medio: 5365.2
+Tempo medio: 1.455326795578003 segundos
+TSP_berlin16
+Custo do caminho: 5027
+Custo do caminho: 5115
+Custo do caminho: 5040
+Custo do caminho: 5039
+Custo do caminho: 5040
+Custo medio: 5052.2
+Tempo medio: 3.0885290145874023 segundos
+TSP_dj38
+Custo do caminho: 7029
+Custo do caminho: 6904
+Custo do caminho: 7319
+Custo do caminho: 8783
+Custo do caminho: 7271
+Custo medio: 7461.2
+Tempo medio: 36.71687650680542 segundos
+TSP_berlin52
+Custo do caminho: 8249
+Custo do caminho: 8733
+Custo do caminho: 8671
+Custo do caminho: 8445
+Custo do caminho: 8364
+Custo medio: 8492.4
+Tempo medio: 65.73426952362061 segundos
+TSP_eil51
+Custo do caminho: 497
+Custo do caminho: 463
+Custo do caminho: 454
+Custo do caminho: 466
+Custo do caminho: 446
+Custo medio: 465.2
+Tempo medio: 213.34198150634765 segundos
+Executando Algoritmo Genético...
+[0.5, 1, 2, 2]
+TSP_berlin10
+Custo do caminho: 5114
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo do caminho: 5247
+Custo do caminho: 4987
+Custo medio: 5025.2
+Tempo medio: 0.7016566276550293 segundos
+TSP_berlin15
+Custo do caminho: 6525
+Custo do caminho: 4967
+Custo do caminho: 4967
+Custo do caminho: 7875
+Custo do caminho: 5292
+Custo medio: 5925.2
+Tempo medio: 1.6278477668762208 segundos
+TSP_berlin16
+Custo do caminho: 6412
+Custo do caminho: 5042
+Custo do caminho: 5102
+Custo do caminho: 5037
+Custo do caminho: 7306
+Custo medio: 5779.8
+Tempo medio: 2.072803258895874 segundos
+TSP_dj38
+Custo do caminho: 6970
+Custo do caminho: 6661
+Custo do caminho: 7075
+Custo do caminho: 6660
+Custo do caminho: 6808
+Custo medio: 6834.8
+Tempo medio: 36.30322160720825 segundos
+TSP_berlin52
+Custo do caminho: 7715
+Custo do caminho: 8011
+Custo do caminho: 7890
+Custo do caminho: 8282
+Custo do caminho: 7715
+Custo medio: 7922.6
+Tempo medio: 165.76254091262817 segundos
+TSP_eil51
+Custo do caminho: 435
+Custo do caminho: 435
+Custo do caminho: 430
+Custo do caminho: 440
+Custo do caminho: 432
+Custo medio: 434.4
+Tempo medio: 275.99291133880615 segundos
+4939.099999999999
+[4889.0, 4969.0, 5031.0, 6665.4, 7651.6, 428.6]
+10.118472798665364
+[0.5, 1, 2, 0]
+[0.0, 0.040265753976243206, 0.07957032027053909, 0.14122596153845607, 1.4531954388756345, 0.610328638497658]
+4941.599999999999
+[4889.0, 4971.0, 5033.0, 6674.6, 7653.4, 428.6]
+12.095391488075258
+[0.5, 0, 2, 0]
+[0.0, 0.08053150795248641, 0.11935548040580862, 0.27944711538462086, 1.4770617873243124, 0.610328638497658]
+5252.066666666667
+[5139.8, 5358.4, 5437.8, 6656.4, 7986.4, 933.6]
+100.94977534612019
+[0.5, 0, 2, 2]
+[5.129883411740646, 7.880008053150787, 8.171871891784368, 0.006009615384609919, 5.892336250331472, 119.15492957746478]
+5312.9
+[5041.2, 5365.2, 5052.2, 7461.2, 8492.4, 465.2]
+53.41929601828257
+[0.5, 1, 2, 1]
+[3.113111065657595, 8.016911616670019, 0.5012930177043926, 12.097355769230766, 12.601431980906916, 9.201877934272298]
+5320.333333333333
+[5025.2, 5925.2, 5779.8, 6834.8, 7922.6, 434.4]
+80.41016358534495
+[0.5, 1, 2, 2]
+[2.785845776232355, 19.291322730018116, 14.975134274915462, 2.6862980769230793, 5.046406788650231, 1.9718309859154877]
+5389.7
+[5014.0, 5277.0, 5196.4, 7503.8, 8844.8, 502.2]
+75.83039906024932
+[0.5, 0, 2, 1]
+[2.55676007363469, 6.241191866317697, 3.369803063457323, 12.737379807692312, 17.273932643861034, 17.88732394366197]
+6732.133333333332
+[5206.6, 5575.0, 5723.0, 9223.8, 13596.8, 1067.6]
+1.5857674519220986
+[0.5, 1, 1, 0]
+[6.4962159950910285, 12.240789208777935, 13.845235727073801, 38.57872596153845, 80.28109254839563, 150.61032863849763]
+7261.833333333333
+[5176.2, 5917.0, 5771.2, 9864.4, 16106.2, 736.0]
+22.07530267238617
+[0.5, 0, 1, 0]
+[5.87441194518306, 19.126233138715524, 14.804058086333793, 48.203125, 113.55343410236011, 72.76995305164318]
+8174.600000000001
+[5277.8, 5700.4, 6453.6, 14295.6, 16550.4, 769.8]
+3.3908027331034343
+[0.5, 1, 0, 0]
+[7.9525465330333445, 14.765451983088376, 28.378754724487777, 114.77764423076924, 119.44311853619732, 80.70422535211267]
+8715.8
+[5115.8, 6389.0, 6601.8, 13977.8, 19133.8, 1076.6]
+29.352161343892416
+[0.5, 0, 0, 0]
+[4.638985477602786, 28.628951077108916, 31.32683509051124, 110.00300480769229, 153.69663219305224, 152.72300469483565]
+11600.799999999997
+[5475.0, 7761.8, 7782.4, 22237.0, 24956.6, 1392.0]
+0.028771034876505536
+[0.5, 1, 1, 1]
+[11.986091225199427, 56.26736460640226, 54.81201511836085, 234.08954326923075, 230.9016176080615, 226.7605633802817]
+11869.666666666666
+[5778.6, 8122.4, 7906.6, 22383.2, 25623.2, 1404.0]
+0.25691146850585933
+[0.5, 1, 0, 2]
+[18.19595009204337, 63.5272800483189, 57.2826735627611, 236.28605769230768, 239.74012198355874, 229.5774647887324]
+11887.133333333333
+[5655.4, 7978.0, 8210.6, 22349.0, 25703.6, 1426.2]
+0.1959679921468099
+[0.5, 0, 1, 1]
+[15.676007363469004, 60.62009261123414, 63.330017903322066, 235.7722355769231, 240.80615221426675, 234.7887323943662]
+11889.866666666667
+[5475.4, 7985.4, 8355.4, 22991.2, 25147.0, 1384.8]
+0.02585897445678711
+[0.5, 1, 0, 1]
+[11.994272857435051, 60.769075900946234, 66.21046349711557, 245.4206730769231, 233.4261469106338, 225.07042253521126]
+11901.499999999998
+[5459.2, 7943.4, 8408.6, 22108.2, 26084.4, 1405.2]
+0.17393894990285239
+[0.5, 1, 1, 2]
+[11.662916751891999, 59.92349506744513, 67.26874875671375, 232.15444711538464, 245.85521081941133, 229.85915492957747]
+11905.5
+[5580.8, 7912.2, 8047.8, 22821.6, 25646.0, 1424.6]
+0.17397382259368896
+[0.5, 0, 0, 1]
+[14.150132951523833, 59.29534930541575, 60.091505868311124, 242.87259615384613, 240.04242906390877, 234.41314553990605]
+11916.633333333333
+[5369.0, 7588.4, 8106.6, 23327.8, 25652.2, 1455.8]
+0.44726053078969324
+[0.5, 0, 0, 2]
+[9.817958682757212, 52.77632373666196, 61.261189576288054, 250.4777644230769, 240.12463537523203, 241.73708920187792]
+12216.766666666665
+[5470.0, 8404.8, 8498.4, 23850.0, 25672.2, 1405.2]
+0.3533043543497721
+[0.5, 0, 1, 2]
+[11.883820822254041, 69.21280450976444, 69.05510244678734, 258.32331730769226, 240.38981702466188, 229.85915492957747]

@@ -1,0 +1,11 @@
+Executando Algoritmo Genético...
+[0.5, 0, 0, 0]
+TSP_berlin10
+Custo do caminho: 5838
+Custo do caminho: 4965
+Custo do caminho: 4998
+Custo do caminho: 4889
+Custo do caminho: 4889
+Custo medio: 5115.8
+Tempo medio: 0.4544977188110352 segundos
+TSP_berlin15
