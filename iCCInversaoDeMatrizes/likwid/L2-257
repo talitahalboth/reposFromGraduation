@@ -1,0 +1,74 @@
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz
+CPU type:	Intel Core Haswell processor
+CPU clock:	3.39 GHz
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Region OP1, Group 1: L2
++-------------------+----------+
+|    Region Info    |  Core 2  |
++-------------------+----------+
+| RDTSC Runtime [s] | 0.152280 |
+|     call count    |       11 |
++-------------------+----------+
+
++-----------------------+---------+------------+
+|         Event         | Counter |   Core 2   |
++-----------------------+---------+------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 1427909000 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  |  592034300 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  |  516137300 |
+|    L1D_REPLACEMENT    |   PMC0  |   27584690 |
+|    L2_TRANS_L1D_WB    |   PMC1  |     381173 |
+|     ICACHE_MISSES     |   PMC2  |       3433 |
++-----------------------+---------+------------+
+
++--------------------------------+------------+
+|             Metric             |   Core 2   |
++--------------------------------+------------+
+|       Runtime (RDTSC) [s]      |     0.1523 |
+|      Runtime unhalted [s]      |     0.1745 |
+|           Clock [MHz]          |  3890.6912 |
+|               CPI              |     0.4146 |
+|  L2D load bandwidth [MBytes/s] | 11593.2427 |
+|  L2D load data volume [GBytes] |     1.7654 |
+| L2D evict bandwidth [MBytes/s] |   160.1987 |
+| L2D evict data volume [GBytes] |     0.0244 |
+|     L2 bandwidth [MBytes/s]    | 11754.8842 |
+|     L2 data volume [GBytes]    |     1.7900 |
++--------------------------------+------------+
+
+Region OP2, Group 1: L2
++-------------------+----------+
+|    Region Info    |  Core 2  |
++-------------------+----------+
+| RDTSC Runtime [s] | 0.123744 |
+|     call count    |       10 |
++-------------------+----------+
+
++-----------------------+---------+------------+
+|         Event         | Counter |   Core 2   |
++-----------------------+---------+------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 1027163000 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  |  480518600 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  |  418922000 |
+|    L1D_REPLACEMENT    |   PMC0  |   21402900 |
+|    L2_TRANS_L1D_WB    |   PMC1  |     101890 |
+|     ICACHE_MISSES     |   PMC2  |       4216 |
++-----------------------+---------+------------+
+
++--------------------------------+------------+
+|             Metric             |   Core 2   |
++--------------------------------+------------+
+|       Runtime (RDTSC) [s]      |     0.1237 |
+|      Runtime unhalted [s]      |     0.1417 |
+|           Clock [MHz]          |  3890.6501 |
+|               CPI              |     0.4678 |
+|  L2D load bandwidth [MBytes/s] | 11069.5112 |
+|  L2D load data volume [GBytes] |     1.3698 |
+| L2D evict bandwidth [MBytes/s] |    52.6972 |
+| L2D evict data volume [GBytes] |     0.0065 |
+|     L2 bandwidth [MBytes/s]    | 11124.3889 |
+|     L2 data volume [GBytes]    |     1.3766 |
++--------------------------------+------------+
+

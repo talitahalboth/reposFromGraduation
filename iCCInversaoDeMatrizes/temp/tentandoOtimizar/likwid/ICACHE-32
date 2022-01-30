@@ -1,0 +1,78 @@
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz
+CPU type:	Intel Core Haswell processor
+CPU clock:	3.39 GHz
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Region OP1, Group 1: ICACHE
++-------------------+----------+
+|    Region Info    |  Core 2  |
++-------------------+----------+
+| RDTSC Runtime [s] | 0.000396 |
+|     call count    |       11 |
++-------------------+----------+
+
++-----------------------+---------+---------+
+|         Event         | Counter |  Core 2 |
++-----------------------+---------+---------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 2810592 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 1443526 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 1410830 |
+|    ICACHE_ACCESSES    |   PMC0  |   50306 |
+|     ICACHE_MISSES     |   PMC1  |    2897 |
+|  ICACHE_IFETCH_STALL  |   PMC2  |   25152 |
+|   ILD_STALL_IQ_FULL   |   PMC3  |   19192 |
++-----------------------+---------+---------+
+
++---------------------------+-----------+
+|           Metric          |   Core 2  |
++---------------------------+-----------+
+|    Runtime (RDTSC) [s]    |    0.0004 |
+|    Runtime unhalted [s]   |    0.0004 |
+|        Clock [MHz]        | 3470.7603 |
+|            CPI            |    0.5136 |
+|      L1I request rate     |    0.0179 |
+|       L1I miss rate       |    0.0010 |
+|       L1I miss ratio      |    0.0576 |
+|         L1I stalls        |     25152 |
+|       L1I stall rate      |    0.0089 |
+|   L1I queue full stalls   |     19192 |
+| L1I queue full stall rate |    0.0068 |
++---------------------------+-----------+
+
+Region OP2, Group 1: ICACHE
++-------------------+----------+
+|    Region Info    |  Core 2  |
++-------------------+----------+
+| RDTSC Runtime [s] | 0.000385 |
+|     call count    |       10 |
++-------------------+----------+
+
++-----------------------+---------+---------+
+|         Event         | Counter |  Core 2 |
++-----------------------+---------+---------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 1850067 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 1430027 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 1397434 |
+|    ICACHE_ACCESSES    |   PMC0  |   54480 |
+|     ICACHE_MISSES     |   PMC1  |    3856 |
+|  ICACHE_IFETCH_STALL  |   PMC2  |   48191 |
+|   ILD_STALL_IQ_FULL   |   PMC3  |   17294 |
++-----------------------+---------+---------+
+
++---------------------------+-----------+
+|           Metric          |   Core 2  |
++---------------------------+-----------+
+|    Runtime (RDTSC) [s]    |    0.0004 |
+|    Runtime unhalted [s]   |    0.0004 |
+|        Clock [MHz]        | 3471.2639 |
+|            CPI            |    0.7730 |
+|      L1I request rate     |    0.0294 |
+|       L1I miss rate       |    0.0021 |
+|       L1I miss ratio      |    0.0708 |
+|         L1I stalls        |     48191 |
+|       L1I stall rate      |    0.0260 |
+|   L1I queue full stalls   |     17294 |
+| L1I queue full stall rate |    0.0093 |
++---------------------------+-----------+
+

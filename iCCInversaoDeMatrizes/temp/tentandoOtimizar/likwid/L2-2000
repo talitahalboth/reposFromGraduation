@@ -1,0 +1,33 @@
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz
+CPU type:	Intel Core Haswell processor
+CPU clock:	3.39 GHz
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Group 1: L2
++-----------------------+---------+--------------+
+|         Event         | Counter |    Core 2    |
++-----------------------+---------+--------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 493019183930 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 610325113705 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 535483435506 |
+|    L1D_REPLACEMENT    |   PMC0  |   8645528767 |
+|    L2_TRANS_L1D_WB    |   PMC1  |    169656956 |
+|     ICACHE_MISSES     |   PMC2  |    179023333 |
++-----------------------+---------+--------------+
+
++--------------------------------+-----------+
+|             Metric             |   Core 2  |
++--------------------------------+-----------+
+|       Runtime (RDTSC) [s]      |  430.7213 |
+|      Runtime unhalted [s]      |  179.9421 |
+|           Clock [MHz]          | 3865.8380 |
+|               CPI              |    1.2379 |
+|  L2D load bandwidth [MBytes/s] | 1284.6214 |
+|  L2D load data volume [GBytes] |  553.3138 |
+| L2D evict bandwidth [MBytes/s] |   25.2090 |
+| L2D evict data volume [GBytes] |   10.8580 |
+|     L2 bandwidth [MBytes/s]    | 1336.4311 |
+|     L2 data volume [GBytes]    |  575.6294 |
++--------------------------------+-----------+
+

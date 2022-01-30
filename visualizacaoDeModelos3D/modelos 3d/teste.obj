@@ -1,0 +1,20 @@
+# OBJ - Wavefront object file
+# Esta linha contém um comentário
+ 
+# v <x> <y> <z>  - Define um vértice do objeto (podem ser int ou float)
+v 16 32 16
+v 16 32 -16
+v 16 0 16
+v 16 0 -16
+v -16 32 16
+v -16 32 -16
+v -16 0 16
+v -16 0 -16
+ 
+# definição das faces (v1 v2 v3 v4 ...)
+f 1 3 4 2
+f 6 8 7 5
+f 2 6 5 1
+f 3 7 8 4
+f 1 5 7 3
+f 4 8 6 2

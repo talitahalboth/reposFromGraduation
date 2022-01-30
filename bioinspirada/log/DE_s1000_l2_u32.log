@@ -1,0 +1,222 @@
+# Job id 0
+# Devices visible to TensorFlow: [_DeviceAttributes(/job:localhost/replica:0/task:0/device:CPU:0, CPU, 268435456, 7405259706096311710), _DeviceAttributes(/job:localhost/replica:0/task:0/device:XLA_CPU:0, XLA_CPU, 17179869184, 7327362382689281074)]
+# Vocab file /home/bcc/thcf16/tmp/iwslt15/vocab.de exists
+# Vocab file /home/bcc/thcf16/tmp/iwslt15/vocab.en exists
+  saving hparams to tmp/nmt_attention_model_DE_s1000_l2_u32/hparams
+  saving hparams to tmp/nmt_attention_model_DE_s1000_l2_u32/best_bleu/hparams
+  attention=scaled_luong
+  attention_architecture=standard
+  avg_ckpts=False
+  batch_size=128
+  beam_width=0
+  best_bleu=0
+  best_bleu_dir=tmp/nmt_attention_model_DE_s1000_l2_u32/best_bleu
+  check_special_token=True
+  colocate_gradients_with_ops=True
+  coverage_penalty_weight=0.0
+  decay_scheme=
+  dev_prefix=/home/bcc/thcf16/tmp/iwslt15/newstest2012
+  dropout=0.2
+  embed_prefix=None
+  encoder_type=uni
+  eos=</s>
+  epoch_step=0
+  forget_bias=1.0
+  infer_batch_size=32
+  infer_mode=greedy
+  init_op=uniform
+  init_weight=0.1
+  language_model=False
+  learning_rate=1.0
+  length_penalty_weight=0.0
+  log_device_placement=False
+  max_gradient_norm=5.0
+  max_train=0
+  metrics=['bleu']
+  num_buckets=5
+  num_dec_emb_partitions=0
+  num_decoder_layers=2
+  num_decoder_residual_layers=0
+  num_embeddings_partitions=0
+  num_enc_emb_partitions=0
+  num_encoder_layers=2
+  num_encoder_residual_layers=0
+  num_gpus=1
+  num_inter_threads=0
+  num_intra_threads=0
+  num_keep_ckpts=5
+  num_sampled_softmax=0
+  num_train_steps=1000
+  num_translations_per_input=1
+  num_units=32
+  optimizer=sgd
+  out_dir=tmp/nmt_attention_model_DE_s1000_l2_u32
+  output_attention=True
+  override_loaded_hparams=False
+  pass_hidden_state=True
+  random_seed=None
+  residual=False
+  sampling_temperature=0.0
+  share_vocab=False
+  sos=<s>
+  src=de
+  src_embed_file=
+  src_max_len=50
+  src_max_len_infer=None
+  src_vocab_file=/home/bcc/thcf16/tmp/iwslt15/vocab.de
+  src_vocab_size=50000
+  steps_per_external_eval=None
+  steps_per_stats=100
+  subword_option=
+  test_prefix=/home/bcc/thcf16/tmp/iwslt15/newstest2013
+  tgt=en
+  tgt_embed_file=
+  tgt_max_len=50
+  tgt_max_len_infer=None
+  tgt_vocab_file=/home/bcc/thcf16/tmp/iwslt15/vocab.en
+  tgt_vocab_size=50000
+  time_major=True
+  train_prefix=/home/bcc/thcf16/tmp/iwslt15/train
+  unit_type=lstm
+  use_char_encode=False
+  vocab_prefix=/home/bcc/thcf16/tmp/iwslt15/vocab
+  warmup_scheme=t2t
+  warmup_steps=0
+# Creating train graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  learning_rate=1, warmup_steps=0, warmup_scheme=t2t
+  decay_scheme=, start_decay_step=1000, decay_steps 0, decay_factor 1
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (50000, 32), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (50000, 32), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (32, 32), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (96, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (64, 32), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (32, 50000), /device:GPU:0
+# Creating eval graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (50000, 32), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (50000, 32), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (32, 32), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (96, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (64, 32), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (32, 50000), /device:GPU:0
+# Creating infer graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  decoder: infer_mode=greedybeam_width=0, length_penalty=0.000000, coverage_penalty=0.000000
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (50000, 32), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (50000, 32), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (32, 32), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (96, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (64, 32), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (32, 50000), 
+# log_file=tmp/nmt_attention_model_DE_s1000_l2_u32/log_1574808595
+  created train model with fresh parameters, time 0.16s
+  created infer model with fresh parameters, time 0.08s
+  # 2694
+    src: Dank der Beständigkeit unserer Energiepolitik zahlen unsere Nachbarn eine im Gegensatz zu unseren französischen Haushalten um 40 % höhere Elektrizitätsrechnung .
+    ref: On the other hand , thanks to the constancy of energy policy , our neighbours pay 40 % more for their electricity than French households .
+    nmt: poppy Burgas Pump Pump Pump Kleine lifelong lifelong Opatija Opatija ni ni overbooking Massey Massey DTD DTD DTD harming harming Opatija Neyts Neyts Lafontaine Lafontaine extant extant pharmacists pharmacists pharmacists pharmacists pharmacists ayuda ayuda speakers speakers Ihren Geo Geo Geo Geo bans
+  created eval model with fresh parameters, time 0.09s
+  eval dev: perplexity 50000.09, time 29s, Tue Nov 26 19:50:25 2019.
+  eval test: perplexity 50000.03, time 24s, Tue Nov 26 19:50:50 2019.
+  created infer model with fresh parameters, time 0.06s
+# Start step 0, lr 1, Tue Nov 26 19:50:50 2019
+# Init train iterator, skipping 0 elements
+  step 100 lr 1 step-time 1.85s wps 3.28K ppl 26118.78 gN 47.89 bleu 0.00, Tue Nov 26 19:53:55 2019
+  step 200 lr 1 step-time 1.66s wps 3.70K ppl 3021.40 gN 17.89 bleu 0.00, Tue Nov 26 19:56:42 2019
+  step 300 lr 1 step-time 1.64s wps 3.70K ppl 1713.66 gN 10.38 bleu 0.00, Tue Nov 26 19:59:26 2019
+  step 400 lr 1 step-time 1.65s wps 3.70K ppl 1474.16 gN 10.00 bleu 0.00, Tue Nov 26 20:02:11 2019
+  step 500 lr 1 step-time 1.63s wps 3.69K ppl 1174.89 gN 7.92 bleu 0.00, Tue Nov 26 20:04:53 2019
+  step 600 lr 1 step-time 1.66s wps 3.70K ppl 1034.03 gN 7.30 bleu 0.00, Tue Nov 26 20:07:39 2019
+  step 700 lr 1 step-time 1.64s wps 3.70K ppl 964.23 gN 7.24 bleu 0.00, Tue Nov 26 20:10:23 2019
+  step 800 lr 1 step-time 1.63s wps 3.70K ppl 836.98 gN 5.39 bleu 0.00, Tue Nov 26 20:13:07 2019
+  step 900 lr 1 step-time 1.67s wps 3.69K ppl 821.47 gN 5.81 bleu 0.00, Tue Nov 26 20:15:54 2019
+  step 1000 lr 1 step-time 1.64s wps 3.69K ppl 742.86 gN 5.40 bleu 0.00, Tue Nov 26 20:18:38 2019
+# Save eval, global step 1000
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s1000_l2_u32/translate.ckpt-1000, time 0.25s
+  # 2974
+    src: &quot; Gegen sie spielen zu dürfen bedeutet groβes Glück ! &quot;
+    ref: &quot; To be able to play against them , that is pure happiness ! &quot;
+    nmt: <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk>
+  loaded eval model parameters from tmp/nmt_attention_model_DE_s1000_l2_u32/translate.ckpt-1000, time 0.05s
+  eval dev: perplexity 1002.39, time 28s, Tue Nov 26 20:19:08 2019.
+  eval test: perplexity 909.05, time 24s, Tue Nov 26 20:19:33 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s1000_l2_u32/translate.ckpt-1000, time 0.26s
+  # 2038
+    src: Das ist gerade einmal das zweite Mal , dass wir in Süd- und Mittelamerika spielen , und bis jetzt ist es großartig gewesen .
+    ref: This is only our second time in South and Central America and so far has been great .
+    nmt: The <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> ,
+  loaded eval model parameters from tmp/nmt_attention_model_DE_s1000_l2_u32/translate.ckpt-1000, time 0.04s
+  eval dev: perplexity 1002.39, time 29s, Tue Nov 26 20:20:04 2019.
+  eval test: perplexity 909.05, time 24s, Tue Nov 26 20:20:28 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s1000_l2_u32/translate.ckpt-1000, time 0.03s
+# External evaluation, global step 1000
+  decoding to output tmp/nmt_attention_model_DE_s1000_l2_u32/output_dev
+  done, num sentences 3003, num translations per input 1, time 56s, Tue Nov 26 20:21:25 2019.
+  bleu dev: 0.0
+  saving hparams to tmp/nmt_attention_model_DE_s1000_l2_u32/hparams
+# External evaluation, global step 1000
+  decoding to output tmp/nmt_attention_model_DE_s1000_l2_u32/output_test
+  done, num sentences 3000, num translations per input 1, time 52s, Tue Nov 26 20:22:18 2019.
+  bleu test: 0.0
+  saving hparams to tmp/nmt_attention_model_DE_s1000_l2_u32/hparams
+# Final, step 1000 lr 1 step-time 1.64s wps 3.69K ppl 742.86 gN 5.40 dev ppl 1002.39, dev bleu 0.0, test ppl 909.05, test bleu 0.0, Tue Nov 26 20:22:19 2019
+# Done training!, time 1889s, Tue Nov 26 20:22:19 2019.
+# Start evaluating saved best models.
+  created infer model with fresh parameters, time 0.07s
+  # 2213
+    src: Modol erinnert daran , dass es bereits eine Studie vom Patronat de Collserola gibt , die nicht &quot; auf taube Ohren stoßen sollte &quot; , obwohl er der Stadtverwaltung dankbar sei , dass sie seinem Gremium die Möglichkeit gegeben hat , an diesem Projekt &quot; vom ersten Augenblick an &quot; mitzuwirken .
+    ref: Modolo remembers that there is already a work done by the Board of Collserola that &quot; should not fall on deaf ears , &quot; although he is grateful for the opportunity that the city hall offers to his profession to intervene in this project &quot; from the very beginning . &quot;
+    nmt: seductive bombings Solaris Solaris years years years rebound rebound tertiary tertiary Manchuria symbolic symbolic symbolic symbolic symbolic deities deities deities deities Lidi Lidi Lidi Leap DA DA DA anno anno anno anno spec categorization categorization Bach Bach hamper Countess 40 40 sympathetically misled misled Sense Sense psychology psychology prohibitions campo fatwa fatwa Merge Merge Merge droves droves droves grass grass colorectal colorectal colorectal plunges plunges basses outraged 288 288 288 Transparency mm Save Poreč mm Rocha Rocha exceptions Save 680 crisp towards towards less less Thule Thule Thule cofinanced Cistercian disgraceful disgraceful practically practically Abyei Abyei Sierens Sierens Sierens Sierens Sierens Sierens Sierens Gert
+  created eval model with fresh parameters, time 0.08s
+  eval dev: perplexity 49999.95, time 30s, Tue Nov 26 20:22:50 2019.
+  eval test: perplexity 49999.99, time 24s, Tue Nov 26 20:23:14 2019.
+  created infer model with fresh parameters, time 0.08s
+  bleu dev: 0.0
+  bleu test: 0.0
+# Best bleu, step 0 lr 1 step-time 1.64s wps 3.69K ppl 742.86 gN 5.40 dev ppl 49999.95, dev bleu 0.0, test ppl 49999.99, test bleu 0.0, Tue Nov 26 20:23:16 2019

@@ -1,0 +1,204 @@
+# Job id 0
+# Devices visible to TensorFlow: [_DeviceAttributes(/job:localhost/replica:0/task:0/device:CPU:0, CPU, 268435456, 2164466308822475011), _DeviceAttributes(/job:localhost/replica:0/task:0/device:XLA_CPU:0, XLA_CPU, 17179869184, 6011330679209089211)]
+# Vocab file tmp/iwslt15/vocab.vi exists
+# Vocab file tmp/iwslt15/vocab.en exists
+  saving hparams to tmp/nmt_attention_model_VI_s100_l2_u256/hparams
+  saving hparams to tmp/nmt_attention_model_VI_s100_l2_u256/best_bleu/hparams
+  attention=scaled_luong
+  attention_architecture=standard
+  avg_ckpts=False
+  batch_size=128
+  beam_width=0
+  best_bleu=0
+  best_bleu_dir=tmp/nmt_attention_model_VI_s100_l2_u256/best_bleu
+  check_special_token=True
+  colocate_gradients_with_ops=True
+  coverage_penalty_weight=0.0
+  decay_scheme=
+  dev_prefix=tmp/iwslt15/tst2012
+  dropout=0.2
+  embed_prefix=None
+  encoder_type=uni
+  eos=</s>
+  epoch_step=0
+  forget_bias=1.0
+  infer_batch_size=32
+  infer_mode=greedy
+  init_op=uniform
+  init_weight=0.1
+  language_model=False
+  learning_rate=1.0
+  length_penalty_weight=0.0
+  log_device_placement=False
+  max_gradient_norm=5.0
+  max_train=0
+  metrics=['bleu']
+  num_buckets=5
+  num_dec_emb_partitions=0
+  num_decoder_layers=2
+  num_decoder_residual_layers=0
+  num_embeddings_partitions=0
+  num_enc_emb_partitions=0
+  num_encoder_layers=2
+  num_encoder_residual_layers=0
+  num_gpus=1
+  num_inter_threads=0
+  num_intra_threads=0
+  num_keep_ckpts=5
+  num_sampled_softmax=0
+  num_train_steps=100
+  num_translations_per_input=1
+  num_units=256
+  optimizer=sgd
+  out_dir=tmp/nmt_attention_model_VI_s100_l2_u256
+  output_attention=True
+  override_loaded_hparams=False
+  pass_hidden_state=True
+  random_seed=None
+  residual=False
+  sampling_temperature=0.0
+  share_vocab=False
+  sos=<s>
+  src=vi
+  src_embed_file=
+  src_max_len=50
+  src_max_len_infer=None
+  src_vocab_file=tmp/iwslt15/vocab.vi
+  src_vocab_size=7709
+  steps_per_external_eval=None
+  steps_per_stats=100
+  subword_option=
+  test_prefix=tmp/iwslt15/tst2013
+  tgt=en
+  tgt_embed_file=
+  tgt_max_len=50
+  tgt_max_len_infer=None
+  tgt_vocab_file=tmp/iwslt15/vocab.en
+  tgt_vocab_size=17191
+  time_major=True
+  train_prefix=tmp/iwslt15/train
+  unit_type=lstm
+  use_char_encode=False
+  vocab_prefix=tmp/iwslt15/vocab
+  warmup_scheme=t2t
+  warmup_steps=0
+# Creating train graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  learning_rate=1, warmup_steps=0, warmup_scheme=t2t
+  decay_scheme=, start_decay_step=100, decay_steps 0, decay_factor 1
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (7709, 256), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 256), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (256, 256), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (768, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (512, 256), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (256, 17191), /device:GPU:0
+# Creating eval graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (7709, 256), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 256), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (256, 256), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (768, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (512, 256), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (256, 17191), /device:GPU:0
+# Creating infer graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  decoder: infer_mode=greedybeam_width=0, length_penalty=0.000000, coverage_penalty=0.000000
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (7709, 256), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 256), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (256, 256), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (768, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (512, 256), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (256, 17191), 
+# log_file=tmp/nmt_attention_model_VI_s100_l2_u256/log_1574882113
+  created train model with fresh parameters, time 0.17s
+  created infer model with fresh parameters, time 0.10s
+  # 223
+    src: và là nước duy nhất trên thế giới làm điều này .
+    ref: The only country in the world .
+    nmt: nationally nationally nationally central central script script central newest newest nationally nationally detecting detecting detecting detecting overpopulation overpopulation overpopulation overpopulation overpopulation overpopulation overpopulation overpopulation
+  created eval model with fresh parameters, time 0.12s
+  eval dev: perplexity 17214.35, time 10s, Wed Nov 27 16:15:25 2019.
+  eval test: perplexity 17233.30, time 10s, Wed Nov 27 16:15:35 2019.
+  created infer model with fresh parameters, time 0.10s
+# Start step 0, lr 1, Wed Nov 27 16:15:35 2019
+# Init train iterator, skipping 0 elements
+  step 100 lr 1 step-time 1.92s wps 2.93K ppl 141807.82 gN 168.91 bleu 0.00, Wed Nov 27 16:18:48 2019
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s100_l2_u256/translate.ckpt-100, time 4.71s
+  # 269
+    src: Như thế quá vô lương tâm
+    ref: It would be unconscionable .
+    nmt: The a a to to to to to to to to to
+  loaded eval model parameters from tmp/nmt_attention_model_VI_s100_l2_u256/translate.ckpt-100, time 0.10s
+  eval dev: perplexity 2686.81, time 9s, Wed Nov 27 16:19:07 2019.
+  eval test: perplexity 2836.92, time 9s, Wed Nov 27 16:19:17 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s100_l2_u256/translate.ckpt-100, time 0.09s
+# External evaluation, global step 100
+  decoding to output tmp/nmt_attention_model_VI_s100_l2_u256/output_dev
+  done, num sentences 1553, num translations per input 1, time 64s, Wed Nov 27 16:20:22 2019.
+  bleu dev: 0.0
+  saving hparams to tmp/nmt_attention_model_VI_s100_l2_u256/hparams
+# External evaluation, global step 100
+  decoding to output tmp/nmt_attention_model_VI_s100_l2_u256/output_test
+  done, num sentences 1268, num translations per input 1, time 65s, Wed Nov 27 16:21:29 2019.
+  bleu test: 0.0
+  saving hparams to tmp/nmt_attention_model_VI_s100_l2_u256/hparams
+# Final, step 100 lr 1 step-time 1.92s wps 2.93K ppl 141807.82 gN 168.91 dev ppl 2686.81, dev bleu 0.0, test ppl 2836.92, test bleu 0.0, Wed Nov 27 16:21:29 2019
+# Done training!, time 353s, Wed Nov 27 16:21:29 2019.
+# Start evaluating saved best models.
+  created infer model with fresh parameters, time 0.09s
+  # 677
+    src: Vâng , giả dụ bạn sống ở một vùng xa xôi hẻo lánh nào đó và bạn có một người thân bị tắc hai động mạch vành và bác sĩ gia đình chuyển người thân đó lên một bác sĩ chuyên khoa tim có chỉ số nong rộng động mạch vành thành công là 200 .
+    ref: Now suppose you live in a certain part of a certain remote place and you have a loved one who has blockages in two coronary arteries and your family doctor refers that loved one to a cardiologist who &apos;s batting 200 on angioplasties .
+    nmt: lit lit lit Bolte 1-2-3 1-2-3 1-2-3 1-2-3 KIPP KIPP KIPP KIPP acceptable acceptable differently differently differently differently differently differently differently differently codes codes codes hobby hobby automatically automatically automatically automatically automatically walks walks automatically connected connected connected vaccinated vaccinated vaccinated vaccinated vaccinated vaccinated vaccinated vaccinated vaccinated vaccinated vaccinated vaccinated vaccinated vaccinated vaccinated vaccinated rule rule rule rule rule rule rule rule rule rule rule rule Come grownups grownups grownups meltdown meltdown meltdown meltdown dismissed dismissed Ray Ray Ray Ray Ray Ray Ray Ray Ray horizontally horizontally horizontally horizontally horizontally horizontally horizontally horizontally horizontally horizontally horizontally horizontally horizontally horizontally horizontally horizontally horizontally horizontally horizontally horizontally horizontally hid hid hid hid hid hid
+  created eval model with fresh parameters, time 0.11s
+  eval dev: perplexity 17222.94, time 8s, Wed Nov 27 16:21:39 2019.
+  eval test: perplexity 17212.64, time 8s, Wed Nov 27 16:21:47 2019.
+  created infer model with fresh parameters, time 0.17s
+  bleu dev: 0.0
+  bleu test: 0.0
+# Best bleu, step 0 lr 1 step-time 1.92s wps 2.93K ppl 141807.82 gN 168.91 dev ppl 17222.94, dev bleu 0.0, test ppl 17212.64, test bleu 0.0, Wed Nov 27 16:21:49 2019

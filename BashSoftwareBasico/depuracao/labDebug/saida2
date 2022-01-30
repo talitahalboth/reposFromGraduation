@@ -1,0 +1,91 @@
+frag.c: (in function my_memcpy)
+frag.c:76:15: Operands of < have incompatible types (int, arbitrary unsigned
+                 integral type): i < len / sizeof(long int)
+  To allow arbitrary integral types to match any integral type, use
+  +matchanyintegral.
+frag.c:87:10: Implicitly temp storage dst returned as implicitly only: dst
+  Temp storage (associated with a formal parameter) is transferred to a
+  non-temporary reference. The storage may be released or new aliases created.
+  (Use -temptrans to inhibit warning)
+frag.c: (in function in_cksum)
+frag.c:102:9: Test expression for if not boolean, type long int:
+                 sum & 0x80000000
+  Test expression type is not boolean or int. (Use -predboolint to inhibit
+  warning)
+frag.c:103:31: Left operand of >> may be negative (long int): sum >> 16
+  The left operand to a shift operator may be negative (behavior is
+  implementation-defined). (Use -shiftimplementation to inhibit warning)
+frag.c:107:7: Test expression for if not boolean, type int: len
+frag.c:108:5: Incompatible types for += (long int, char): sum += *buf
+  To make char and int types equivalent, use +charint.
+frag.c:110:10: Left operand of >> may be negative (long int): sum >> 16
+frag.c:110:10: Test expression for while not boolean, type long int: sum >> 16
+frag.c:111:29: Left operand of >> may be negative (long int): sum >> 16
+frag.c:113:10: Return value type long int does not match declared type int:
+                  ~sum
+  To ignore type qualifiers in type comparisons use +ignorequals.
+frag.c: (in function print_ip)
+frag.c:118:19: Format argument 2 to printf (%02x) expects unsigned int gets
+                  unsigned char: ip->ip_tos
+   frag.c:117:18: Corresponding format code
+frag.c:118:31: Format argument 3 to printf (%02x) expects unsigned int gets
+                  unsigned char: ip->ip_v_hl
+   frag.c:117:22: Corresponding format code
+frag.c:120:19: Format argument 7 to printf (%02x) expects unsigned int gets
+                  unsigned char: ip->ip_p
+   frag.c:117:40: Corresponding format code
+frag.c:120:31: Format argument 8 to printf (%02x) expects unsigned int gets
+                  unsigned char: ip->ip_ttl
+   frag.c:117:44: Corresponding format code
+frag.c: (in function fragment)
+frag.c:129:3: Assignment of unsigned short int to int: l = ip->ip_len
+  To ignore signs in type comparisons use +ignoresigns
+frag.c:131:49: Function my_memcpy expects arg 3 to be int gets size_t:
+                  sizeof(struct ip)
+frag.c:131:5: Return value (type void *) ignored: my_memcpy(&(frag...
+  Result returned by function call is not used. If this is intended, can cast
+  result to (void) to eliminate message. (Use -retvalother to inhibit warning)
+frag.c:132:5: Assignment of int to unsigned short int:
+                 frag[f].ip_len = fragsize
+frag.c:133:23: Left operand of >> may be negative (int): (f * fragsize) >> 3
+frag.c:133:5: Assignment of int to unsigned short int:
+                 frag[f].ip_off = ((f * fragsize) >> 3) | 0x2000
+frag.c:135:5: Assignment of int to unsigned short int:
+                 frag[f].ip_sum = in_cksum((char *)&(frag[f]), 20)
+frag.c:139:47: Function my_memcpy expects arg 3 to be int gets size_t:
+                  sizeof(struct ip)
+frag.c:139:3: Return value (type void *) ignored: my_memcpy(&(frag...
+frag.c:140:3: Assignment of int to unsigned short int: frag[f].ip_len = l
+frag.c:141:20: Left operand of >> may be negative (int): (f * fragsize) >> 3
+frag.c:141:3: Assignment of int to unsigned short int:
+                 frag[f].ip_off = (f * fragsize) >> 3
+frag.c:143:3: Assignment of int to unsigned short int:
+                 frag[f].ip_sum = in_cksum((char *)&(frag[f]), 20)
+frag.c: (in function main)
+frag.c:155:14: Unrecognized identifier: getopt
+  Identifier used in code has not been declared. (Use -unrecog to inhibit
+  warning)
+frag.c:162:12: Argument to exit has implementation defined behavior: 1
+  The argument to exit should be 0, EXIT_SUCCESS or EXIT_FAILURE (Use -exitarg
+  to inhibit warning)
+frag.c:167:10: Argument to exit has implementation defined behavior: -1
+frag.c:170:11: Assignment of size_t to int:
+                  packets = fread(ip, sizeof(struct ip), 1024, stdin)
+frag.c:179:2: Path with no return in function declared to return int
+  There is a path through a function declared to return a value on which there
+  is no return statement. This means the execution may fall through without
+  returning a meaningful result to the caller. (Use -noret to inhibit warning)
+frag.c:50:11: Variable exported but not used outside frag: ip
+  A declaration is exported, but not used outside this module. Declaration can
+  use static qualifier. (Use -exportlocal to inhibit warning)
+frag.c:53:8: Function exported but not used outside frag: my_memcpy
+   frag.c:88:1: Definition of my_memcpy
+frag.c:91:11: Variable exported but not used outside frag: frag
+frag.c:93:5: Variable exported but not used outside frag: fragsize
+frag.c:96:5: Function exported but not used outside frag: in_cksum
+   frag.c:114:1: Definition of in_cksum
+frag.c:116:6: Function exported but not used outside frag: print_ip
+   frag.c:122:1: Definition of print_ip
+frag.c:125:5: Function exported but not used outside frag: fragment
+   frag.c:147:1: Definition of fragment
+

@@ -1,0 +1,140 @@
+=============================================================================
+Inicio da Execução: programa que implementa um servidor sobre TCP
+Stephanie Briere Americo e Talita Halboth Cunha Fernandes
+Disciplina de Redes II
+=============================================================================
+----------------------
+Log type: Info
+Source: main
+Mensagem: Iniciando cliente
+----------------------
+----------------------
+Log type: Info
+Source: main
+Mensagem: Conectando com servidor
+----------------------
+----------------------
+Log type: Info
+Source: main
+Mensagem: Conectado
+----------------------
+----------------------
+Log type: Info
+Source: RetrievePublicKey
+Mensagem: esperando p
+----------------------
+----------------------
+Log type: Info
+Source: RetrievePublicKey
+Mensagem: Mensagem recebida: 12211-
+----------------------
+----------------------
+Log type: Info
+Source: RetrievePublicKey
+Mensagem: p recebido, 12211
+----------------------
+----------------------
+Log type: Info
+Source: RetrievePublicKey
+Mensagem: esperando g
+----------------------
+----------------------
+Log type: Info
+Source: RetrievePublicKey
+Mensagem: Mensagem recebida: 2-5984-
+----------------------
+----------------------
+Log type: Info
+Source: RetrievePublicKey
+Mensagem: g recebido, 2
+----------------------
+----------------------
+Log type: Info
+Source: RetrievePublicKey
+Mensagem: x recebido, 5984
+----------------------
+----------------------
+Log type: Info
+Source: main
+Mensagem: y enviado, 6776
+----------------------
+----------------------
+Log type: Success
+Source: main
+Mensagem: Chave secreta calculada: 3009
+----------------------
+Digite a mensagem a ser enviada:
+Oie, servidor :)
+----------------------
+Log type: Info
+Source: SendEncryptedMessage
+Mensagem: Mensagem descriptografada binaria:
+b'\xe8\xfc\xef\x9f\x87\x04\xea7\x14l\xa5c8\xcd\x10\xebOie, servidor :)\x00\x00\x00\x00\x00\x00\x00\x00'
+----------------------
+----------------------
+Log type: Info
+Source: SendEncryptedMessage
+Mensagem: Mensagem criptografada:
+b"\xffL>\xc87@z'\xfa\x1d\xe9\x08I\x1d\x9e.-\x89\x9f;,*\x04\x98\x81P\xe9\xce\x1eXzno\x96\x89!\xc7]\x14\xce"
+----------------------
+----------------------
+Log type: Info
+Source: SendEncryptedMessage
+Mensagem: Mensagem enviada
+----------------------
+----------------------
+Log type: Info
+Source: ReceiveEncryptedMessage
+Mensagem: Esperando mensagem
+----------------------
+----------------------
+Log type: Info
+Source: ReceiveEncryptedMessage
+Mensagem: Mensagem recebida: b'9\xafHhv\xadk=\x86\n\xc4\xab\xd7gO\xc0l^(\xaal\x85\xc0\xc7Nc\x93lf\xa5\xeav'
+----------------------
+----------------------
+Log type: Info
+Source: ReceiveEncryptedMessage
+Mensagem: Mensagem descriptografada binaria:
+b'\xb3\xd2T\x18*>\xd9v\x8b\xf7\xce+\xe6n\x94JOi! Tudo bem?\x00\x00\x00'
+----------------------
+----------------------
+Log type: Success
+Source: CheckHeader
+Mensagem: Checksum MD5 confere!
+----------------------
+----------------------
+Log type: Success
+Source: ReceiveEncryptedMessage
+Mensagem: Mensagem descriptografada com sucesso
+----------------------
+----------------------
+Log type: Success
+Source: ReceiveEncryptedMessage
+Mensagem: Mensagem descriptografada:
+Oi! Tudo bem?
+----------------------
+Digite a mensagem a ser enviada:
+Tudo!
+----------------------
+Log type: Info
+Source: SendEncryptedMessage
+Mensagem: Mensagem descriptografada binaria:
+b'H\xda\xa7$\x1d\xb0\x0e\xd9|\xf5-\x99\x1d]h%Tudo!\x00\x00\x00'
+----------------------
+----------------------
+Log type: Info
+Source: SendEncryptedMessage
+Mensagem: Mensagem criptografada:
+b'\x07<f\xbc1*\x19\x9b\x1f\xe8\xf8\xf2\x0c6\xd7\x7f\x8e\xcf\xe6\n\r\xbc\xdc#'
+----------------------
+----------------------
+Log type: Info
+Source: SendEncryptedMessage
+Mensagem: Mensagem enviada
+----------------------
+----------------------
+Log type: Info
+Source: ReceiveEncryptedMessage
+Mensagem: Esperando mensagem
+----------------------

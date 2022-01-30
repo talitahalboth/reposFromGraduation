@@ -1,0 +1,149 @@
+WARNING:tensorflow:From nmt/utils/iterator_utils.py:235: group_by_window (from tensorflow.contrib.data.python.ops.grouping) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.experimental.group_by_window(...)`.
+WARNING:tensorflow:From nmt/model_helper.py:402: __init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is deprecated, please use tf.nn.rnn_cell.LSTMCell, which supports all the feature this cell currently has. Please replace the existing code with tf.nn.rnn_cell.LSTMCell(name='basic_lstm_cell').
+2019-11-29 07:35:11.974686: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /home/bcc/thcf16/tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 07:35:11.974691: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /home/bcc/thcf16/tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 07:35:11.974695: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /home/bcc/thcf16/tmp/iwslt15/vocab.de is already initialized.
+2019-11-29 07:36:41.085294: W tensorflow/core/framework/op_kernel.cc:1273] OP_REQUIRES failed at matmul_op.cc:478 : Resource exhausted: OOM when allocating tensor with shape[3264,50000] and type float on /job:localhost/replica:0/task:0/device:CPU:0 by allocator cpu
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/runpy.py", line 174, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/usr/lib/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/nobackup/bcc/thcf16/nmt/nmt/nmt.py", line 707, in <module>
+    tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "/nobackup/bcc/thcf16/nmt/nmt/nmt.py", line 700, in main
+    run_main(FLAGS, default_hparams, train_fn, inference_fn)
+  File "/nobackup/bcc/thcf16/nmt/nmt/nmt.py", line 693, in run_main
+    train_fn(hparams, target_session=target_session)
+  File "nmt/train.py", line 521, in train
+    step_result = loaded_train_model.train(train_sess)
+  File "nmt/model.py", line 338, in train
+    return sess.run([self.update, output_tuple])
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 929, in run
+    run_metadata_ptr)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1152, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1328, in _do_run
+    run_metadata)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1348, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: OOM when allocating tensor with shape[3264,50000] and type float on /job:localhost/replica:0/task:0/device:CPU:0 by allocator cpu
+	 [[node dynamic_seq2seq/decoder/output_projection/Tensordot/MatMul (defined at nmt/model.py:526)  = MatMul[T=DT_FLOAT, _class=["loc:@gradi...d/MatMul_1"], transpose_a=false, transpose_b=false, _device="/job:localhost/replica:0/task:0/device:CPU:0"](dynamic_seq2seq/decoder/output_projection/Tensordot/Reshape, dynamic_seq2seq/decoder/output_projection/kernel/read)]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+
+Caused by op u'dynamic_seq2seq/decoder/output_projection/Tensordot/MatMul', defined at:
+  File "/usr/lib/python2.7/runpy.py", line 174, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/usr/lib/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/nobackup/bcc/thcf16/nmt/nmt/nmt.py", line 707, in <module>
+    tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "/nobackup/bcc/thcf16/nmt/nmt/nmt.py", line 700, in main
+    run_main(FLAGS, default_hparams, train_fn, inference_fn)
+  File "/nobackup/bcc/thcf16/nmt/nmt/nmt.py", line 693, in run_main
+    train_fn(hparams, target_session=target_session)
+  File "nmt/train.py", line 465, in train
+    train_model = model_helper.create_train_model(model_creator, hparams, scope)
+  File "nmt/model_helper.py", line 127, in create_train_model
+    extra_args=extra_args)
+  File "nmt/attention_model.py", line 64, in __init__
+    extra_args=extra_args)
+  File "nmt/model.py", line 95, in __init__
+    res = self.build_graph(hparams, scope=scope)
+  File "nmt/model.py", line 393, in build_graph
+    self._build_decoder(self.encoder_outputs, encoder_state, hparams))
+  File "nmt/model.py", line 526, in _build_decoder
+    logits = self.output_layer(outputs.rnn_output)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/layers/base.py", line 374, in __call__
+    outputs = super(Layer, self).__call__(inputs, *args, **kwargs)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/keras/engine/base_layer.py", line 757, in __call__
+    outputs = self.call(inputs, *args, **kwargs)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/keras/layers/core.py", line 963, in call
+    outputs = standard_ops.tensordot(inputs, self.kernel, [[rank - 1], [0]])
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/ops/math_ops.py", line 2985, in tensordot
+    ab_matmul = matmul(a_reshape, b_reshape)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/ops/math_ops.py", line 2057, in matmul
+    a, b, transpose_a=transpose_a, transpose_b=transpose_b, name=name)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/ops/gen_math_ops.py", line 4560, in mat_mul
+    name=name)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/util/deprecation.py", line 488, in new_func
+    return func(*args, **kwargs)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 3274, in create_op
+    op_def=op_def)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 1770, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+ResourceExhaustedError (see above for traceback): OOM when allocating tensor with shape[3264,50000] and type float on /job:localhost/replica:0/task:0/device:CPU:0 by allocator cpu
+	 [[node dynamic_seq2seq/decoder/output_projection/Tensordot/MatMul (defined at nmt/model.py:526)  = MatMul[T=DT_FLOAT, _class=["loc:@gradi...d/MatMul_1"], transpose_a=false, transpose_b=false, _device="/job:localhost/replica:0/task:0/device:CPU:0"](dynamic_seq2seq/decoder/output_projection/Tensordot/Reshape, dynamic_seq2seq/decoder/output_projection/kernel/read)]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+
+ /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_2/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_2/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_3/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_3/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (256, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (128, 50000), /device:GPU:0
+# Creating infer graph ...
+# Build a basic encoder
+  num_layers = 4, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 2  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 3  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 2  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 3  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  decoder: infer_mode=greedybeam_width=0, length_penalty=0.000000, coverage_penalty=0.000000
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (50000, 128), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (50000, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_2/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_2/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_3/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_3/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (128, 128), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (384, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_2/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_2/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_3/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_3/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (256, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (128, 50000), 
+# log_file=tmp/nmt_attention_model_DE_s10000_l4_u128/log_1575023674
+  created train model with fresh parameters, time 0.28s
+  created infer model with fresh parameters, time 0.15s
+  # 2297
+    src: Zwischen den obersten Schichten liege eine Verschleißschicht aus Asphalt , die aus kleinen , in Asphalt gebadeten und dann verfestigten Steinen bestehe .
+    ref: Among the most superficial layers is the asphalt , composed of small stones dipped into the asphalt and then compacted .
+    nmt: continuum comb comb comb comb comb comb comb comb comb Sildenafil Sildenafil SIPAPER SIPAPER WEEE WEEE WEEE WEEE WEEE WEEE WEEE performing performing performing Reveal Reveal Reveal Reveal Reveal Reveal flakes flakes Centralizer Centralizer Centralizer Centralizer Centralizer Centralizer Centralizer Centralizer Centralizer 247 247 Centralizer GbR GbR
+  created eval model with fresh parameters, time 0.15s
+  eval dev: perplexity 49996.22, time 19s, Fri Nov 29 07:34:55 2019.
+  eval test: perplexity 49995.98, time 16s, Fri Nov 29 07:35:11 2019.
+  created infer model with fresh parameters, time 0.13s
+# Start step 0, lr 1, Fri Nov 29 07:35:12 2019
+# Init train iterator, skipping 0 elements
+  step 100 lr 1 step-time 0.77s wps 3.97K ppl 608352.02 gN 130.07 bleu 0.00, Fri Nov 29 07:36:28 2019

@@ -1,0 +1,35 @@
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz
+CPU type:	Intel Core Haswell processor
+CPU clock:	3.39 GHz
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Group 1: ICACHE
++-----------------------+---------+------------+
+|         Event         | Counter |   Core 2   |
++-----------------------+---------+------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 5442508445 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 6083667721 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 5413939102 |
+|    ICACHE_ACCESSES    |   PMC0  | 1354063144 |
+|     ICACHE_MISSES     |   PMC1  |   35984215 |
+|  ICACHE_IFETCH_STALL  |   PMC2  |  773100679 |
+|   ILD_STALL_IQ_FULL   |   PMC3  |  648791146 |
++-----------------------+---------+------------+
+
++---------------------------+-----------+
+|           Metric          |   Core 2  |
++---------------------------+-----------+
+|    Runtime (RDTSC) [s]    |   52.0772 |
+|    Runtime unhalted [s]   |    1.7936 |
+|        Clock [MHz]        | 3811.5313 |
+|            CPI            |    1.1178 |
+|      L1I request rate     |    0.2488 |
+|       L1I miss rate       |    0.0066 |
+|       L1I miss ratio      |    0.0266 |
+|         L1I stalls        | 773100679 |
+|       L1I stall rate      |    0.1420 |
+|   L1I queue full stalls   | 648791146 |
+| L1I queue full stall rate |    0.1192 |
++---------------------------+-----------+
+

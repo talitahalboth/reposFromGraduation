@@ -1,0 +1,433 @@
+# Job id 0
+# Devices visible to TensorFlow: [_DeviceAttributes(/job:localhost/replica:0/task:0/device:CPU:0, CPU, 268435456, 8690147873869607294), _DeviceAttributes(/job:localhost/replica:0/task:0/device:XLA_CPU:0, XLA_CPU, 17179869184, 7209788307529458238)]
+# Vocab file /home/bcc/thcf16/tmp/iwslt15/vocab.de exists
+# Vocab file /home/bcc/thcf16/tmp/iwslt15/vocab.en exists
+  saving hparams to tmp/nmt_attention_model_DE_s10000_l2_u32/hparams
+  saving hparams to tmp/nmt_attention_model_DE_s10000_l2_u32/best_bleu/hparams
+  attention=scaled_luong
+  attention_architecture=standard
+  avg_ckpts=False
+  batch_size=128
+  beam_width=0
+  best_bleu=0
+  best_bleu_dir=tmp/nmt_attention_model_DE_s10000_l2_u32/best_bleu
+  check_special_token=True
+  colocate_gradients_with_ops=True
+  coverage_penalty_weight=0.0
+  decay_scheme=
+  dev_prefix=/home/bcc/thcf16/tmp/iwslt15/newstest2012
+  dropout=0.2
+  embed_prefix=None
+  encoder_type=uni
+  eos=</s>
+  epoch_step=0
+  forget_bias=1.0
+  infer_batch_size=32
+  infer_mode=greedy
+  init_op=uniform
+  init_weight=0.1
+  language_model=False
+  learning_rate=1.0
+  length_penalty_weight=0.0
+  log_device_placement=False
+  max_gradient_norm=5.0
+  max_train=0
+  metrics=['bleu']
+  num_buckets=5
+  num_dec_emb_partitions=0
+  num_decoder_layers=2
+  num_decoder_residual_layers=0
+  num_embeddings_partitions=0
+  num_enc_emb_partitions=0
+  num_encoder_layers=2
+  num_encoder_residual_layers=0
+  num_gpus=1
+  num_inter_threads=0
+  num_intra_threads=0
+  num_keep_ckpts=5
+  num_sampled_softmax=0
+  num_train_steps=10000
+  num_translations_per_input=1
+  num_units=32
+  optimizer=sgd
+  out_dir=tmp/nmt_attention_model_DE_s10000_l2_u32
+  output_attention=True
+  override_loaded_hparams=False
+  pass_hidden_state=True
+  random_seed=None
+  residual=False
+  sampling_temperature=0.0
+  share_vocab=False
+  sos=<s>
+  src=de
+  src_embed_file=
+  src_max_len=50
+  src_max_len_infer=None
+  src_vocab_file=/home/bcc/thcf16/tmp/iwslt15/vocab.de
+  src_vocab_size=50000
+  steps_per_external_eval=None
+  steps_per_stats=100
+  subword_option=
+  test_prefix=/home/bcc/thcf16/tmp/iwslt15/newstest2013
+  tgt=en
+  tgt_embed_file=
+  tgt_max_len=50
+  tgt_max_len_infer=None
+  tgt_vocab_file=/home/bcc/thcf16/tmp/iwslt15/vocab.en
+  tgt_vocab_size=50000
+  time_major=True
+  train_prefix=/home/bcc/thcf16/tmp/iwslt15/train
+  unit_type=lstm
+  use_char_encode=False
+  vocab_prefix=/home/bcc/thcf16/tmp/iwslt15/vocab
+  warmup_scheme=t2t
+  warmup_steps=0
+# Creating train graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  learning_rate=1, warmup_steps=0, warmup_scheme=t2t
+  decay_scheme=, start_decay_step=10000, decay_steps 0, decay_factor 1
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (50000, 32), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (50000, 32), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (32, 32), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (96, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (64, 32), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (32, 50000), /device:GPU:0
+# Creating eval graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (50000, 32), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (50000, 32), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (32, 32), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (96, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (64, 32), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (32, 50000), /device:GPU:0
+# Creating infer graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  decoder: infer_mode=greedybeam_width=0, length_penalty=0.000000, coverage_penalty=0.000000
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (50000, 32), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (50000, 32), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (32, 32), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (96, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (64, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (128,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (64, 32), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (32, 50000), 
+# log_file=tmp/nmt_attention_model_DE_s10000_l2_u32/log_1574889313
+  created train model with fresh parameters, time 0.16s
+  created infer model with fresh parameters, time 0.08s
+  # 2283
+    src: Der Forscher erklärte , der direkte Nutzen für die Untersuchungsteilnehmer bestünde in einer umfassenden Untersuchung der Kinder , bei der festgestellt würde , ob diese einen Grad von Übergewichtigkeit oder Fettleibigkeit aufwiesen .
+    ref: The researcher explained that the direct benefit for the participants is a comprehensive assessment of the children , which can detect if they have any degree of overweight or obesity .
+    nmt: context abatibles abatibles abatibles openly openly Sumerian Sumerian Sumerian speculators Borromeo impress Protestants 1a 1a 1a Fidel Toledo Toledo Toledo seemingly seemingly freshwater Honolulu slaughtering slaughtering slaughtering cams restoration restoration Negri Negri Negri boars Negri camper camper camper essays essays essays Musotto Musotto Musotto smoked annoy possesses possesses zusammen keyboard Rica Rica Rica Rica Rica Rica Rica Hiring Hiring Hiring built wastage wastage wastage Manchu buffer
+  created eval model with fresh parameters, time 0.08s
+  eval dev: perplexity 50000.47, time 30s, Wed Nov 27 18:15:44 2019.
+  eval test: perplexity 50000.59, time 25s, Wed Nov 27 18:16:09 2019.
+  created infer model with fresh parameters, time 0.06s
+# Start step 0, lr 1, Wed Nov 27 18:16:09 2019
+# Init train iterator, skipping 0 elements
+  step 100 lr 1 step-time 1.87s wps 3.26K ppl 45540.26 gN 57.21 bleu 0.00, Wed Nov 27 18:19:16 2019
+  step 200 lr 1 step-time 1.72s wps 3.61K ppl 2816.02 gN 16.03 bleu 0.00, Wed Nov 27 18:22:07 2019
+  step 300 lr 1 step-time 1.64s wps 3.66K ppl 1666.98 gN 10.18 bleu 0.00, Wed Nov 27 18:24:51 2019
+  step 400 lr 1 step-time 2.01s wps 3.05K ppl 1434.52 gN 9.91 bleu 0.00, Wed Nov 27 18:28:12 2019
+  step 500 lr 1 step-time 1.97s wps 3.07K ppl 1168.89 gN 8.89 bleu 0.00, Wed Nov 27 18:31:29 2019
+  step 600 lr 1 step-time 1.89s wps 3.24K ppl 1035.10 gN 7.27 bleu 0.00, Wed Nov 27 18:34:38 2019
+  step 700 lr 1 step-time 1.92s wps 3.19K ppl 942.20 gN 6.65 bleu 0.00, Wed Nov 27 18:37:49 2019
+  step 800 lr 1 step-time 1.85s wps 3.26K ppl 835.33 gN 5.67 bleu 0.00, Wed Nov 27 18:40:54 2019
+  step 900 lr 1 step-time 1.93s wps 3.16K ppl 813.61 gN 6.18 bleu 0.00, Wed Nov 27 18:44:07 2019
+  step 1000 lr 1 step-time 2.02s wps 3.01K ppl 759.43 gN 5.93 bleu 0.00, Wed Nov 27 18:47:29 2019
+# Save eval, global step 1000
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-1000, time 0.29s
+  # 2851
+    src: Sie rufen in Erinnerung , dass auch Obama selbstein Amateur sei und Wasser in seinen Wein schenken musste , was das Thema Antiterror betraf .
+    ref: They recall that Obama himself was an amateur and that he had to water down his wine concerning anti ##AT##-##AT## terrorism .
+    nmt: The hotel , the <unk> , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,
+  loaded eval model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-1000, time 0.08s
+  eval dev: perplexity 1140.46, time 36s, Wed Nov 27 18:48:07 2019.
+  eval test: perplexity 1001.33, time 28s, Wed Nov 27 18:48:35 2019.
+  step 1100 lr 1 step-time 2.09s wps 2.92K ppl 708.59 gN 5.41 bleu 0.00, Wed Nov 27 18:52:04 2019
+  step 1200 lr 1 step-time 1.72s wps 3.50K ppl 646.58 gN 5.23 bleu 0.00, Wed Nov 27 18:54:56 2019
+  step 1300 lr 1 step-time 1.67s wps 3.59K ppl 640.93 gN 5.54 bleu 0.00, Wed Nov 27 18:57:44 2019
+  step 1400 lr 1 step-time 1.73s wps 3.56K ppl 628.80 gN 5.53 bleu 0.00, Wed Nov 27 19:00:36 2019
+  step 1500 lr 1 step-time 1.70s wps 3.55K ppl 579.49 gN 5.10 bleu 0.00, Wed Nov 27 19:03:26 2019
+  step 1600 lr 1 step-time 1.69s wps 3.65K ppl 553.30 gN 4.89 bleu 0.00, Wed Nov 27 19:06:15 2019
+  step 1700 lr 1 step-time 1.68s wps 3.64K ppl 527.07 gN 5.14 bleu 0.00, Wed Nov 27 19:09:03 2019
+  step 1800 lr 1 step-time 1.69s wps 3.62K ppl 499.44 gN 4.83 bleu 0.00, Wed Nov 27 19:11:51 2019
+  step 1900 lr 1 step-time 1.68s wps 3.63K ppl 490.13 gN 5.27 bleu 0.00, Wed Nov 27 19:14:40 2019
+  step 2000 lr 1 step-time 1.67s wps 3.65K ppl 485.86 gN 4.69 bleu 0.00, Wed Nov 27 19:17:27 2019
+# Save eval, global step 2000
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-2000, time 0.26s
+  # 875
+    src: Bis 2007 hatte die UBS einen exzellenten Ruf .
+    ref: UBS had an excellent reputation until 2007 .
+    nmt: The <unk> is a few and a <unk> .
+  loaded eval model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-2000, time 0.05s
+  eval dev: perplexity 613.03, time 29s, Wed Nov 27 19:17:57 2019.
+  eval test: perplexity 532.85, time 25s, Wed Nov 27 19:18:22 2019.
+  step 2100 lr 1 step-time 1.67s wps 3.66K ppl 473.24 gN 4.78 bleu 0.00, Wed Nov 27 19:21:09 2019
+  step 2200 lr 1 step-time 1.68s wps 3.68K ppl 467.08 gN 4.68 bleu 0.00, Wed Nov 27 19:23:57 2019
+  step 2300 lr 1 step-time 1.68s wps 3.67K ppl 449.86 gN 4.69 bleu 0.00, Wed Nov 27 19:26:45 2019
+  step 2400 lr 1 step-time 1.68s wps 3.69K ppl 443.78 gN 5.17 bleu 0.00, Wed Nov 27 19:29:33 2019
+  step 2500 lr 1 step-time 1.66s wps 3.68K ppl 424.16 gN 4.61 bleu 0.00, Wed Nov 27 19:32:19 2019
+  step 2600 lr 1 step-time 1.71s wps 3.71K ppl 418.15 gN 4.79 bleu 0.00, Wed Nov 27 19:35:10 2019
+  step 2700 lr 1 step-time 1.67s wps 3.71K ppl 407.36 gN 4.71 bleu 0.00, Wed Nov 27 19:37:57 2019
+  step 2800 lr 1 step-time 1.67s wps 3.71K ppl 403.14 gN 4.70 bleu 0.00, Wed Nov 27 19:40:44 2019
+  step 2900 lr 1 step-time 1.67s wps 3.71K ppl 399.38 gN 4.60 bleu 0.00, Wed Nov 27 19:43:31 2019
+  step 3000 lr 1 step-time 1.68s wps 3.71K ppl 385.56 gN 4.43 bleu 0.00, Wed Nov 27 19:46:19 2019
+# Save eval, global step 3000
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-3000, time 0.25s
+  # 813
+    src: Seine Holding Berkshire Hathaway besitzt neben rund 80 eigenen Tochterfirmen auch Anteile an einer ganzen Reihe von Großkonzernen wie Coca ##AT##-##AT## Cola oder der Munich Re , der früheren Münchener Rück .
+    ref: His holding company , Berkshire Hathaway , owns shares in a long list of major companies such as Coca ##AT##-##AT## Cola and Munich Re ( formerly Münchener Rück ) alongside around 80 of its own subsidiaries .
+    nmt: The <unk> is the <unk> , the <unk> is the <unk> .
+  loaded eval model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-3000, time 0.05s
+  eval dev: perplexity 466.72, time 28s, Wed Nov 27 19:46:49 2019.
+  eval test: perplexity 404.06, time 24s, Wed Nov 27 19:47:14 2019.
+  step 3100 lr 1 step-time 1.68s wps 3.71K ppl 376.80 gN 4.91 bleu 0.00, Wed Nov 27 19:50:02 2019
+  step 3200 lr 1 step-time 1.67s wps 3.72K ppl 369.13 gN 4.48 bleu 0.00, Wed Nov 27 19:52:49 2019
+  step 3300 lr 1 step-time 1.69s wps 3.73K ppl 368.16 gN 4.59 bleu 0.00, Wed Nov 27 19:55:38 2019
+  step 3400 lr 1 step-time 1.68s wps 3.72K ppl 361.47 gN 4.57 bleu 0.00, Wed Nov 27 19:58:26 2019
+  step 3500 lr 1 step-time 1.69s wps 3.72K ppl 352.00 gN 4.58 bleu 0.00, Wed Nov 27 20:01:15 2019
+  step 3600 lr 1 step-time 1.70s wps 3.73K ppl 338.75 gN 4.65 bleu 0.00, Wed Nov 27 20:04:04 2019
+  step 3700 lr 1 step-time 1.69s wps 3.72K ppl 331.47 gN 4.51 bleu 0.00, Wed Nov 27 20:06:53 2019
+  step 3800 lr 1 step-time 1.67s wps 3.73K ppl 324.94 gN 4.96 bleu 0.00, Wed Nov 27 20:09:40 2019
+  step 3900 lr 1 step-time 1.70s wps 3.74K ppl 322.46 gN 4.70 bleu 0.00, Wed Nov 27 20:12:30 2019
+  step 4000 lr 1 step-time 1.68s wps 3.73K ppl 330.98 gN 4.88 bleu 0.00, Wed Nov 27 20:15:18 2019
+# Save eval, global step 4000
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-4000, time 0.25s
+  # 1317
+    src: Eine Katastrophenübung hatte mit einem Blick auf Zuccotti auf Randalls Island stattgefunden .
+    ref: A major disaster drill was held on Randalls Island , with an eye toward Zuccotti .
+    nmt: The <unk> is a new of the city of the city of the city of the city of the city of the city of the city
+  loaded eval model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-4000, time 0.04s
+  eval dev: perplexity 435.57, time 30s, Wed Nov 27 20:15:49 2019.
+  eval test: perplexity 392.42, time 24s, Wed Nov 27 20:16:14 2019.
+  step 4100 lr 1 step-time 1.68s wps 3.74K ppl 320.51 gN 4.58 bleu 0.00, Wed Nov 27 20:19:02 2019
+  step 4200 lr 1 step-time 1.67s wps 3.73K ppl 313.21 gN 4.61 bleu 0.00, Wed Nov 27 20:21:49 2019
+  step 4300 lr 1 step-time 1.71s wps 3.74K ppl 303.15 gN 5.46 bleu 0.00, Wed Nov 27 20:24:40 2019
+  step 4400 lr 1 step-time 1.68s wps 3.73K ppl 309.53 gN 4.95 bleu 0.00, Wed Nov 27 20:27:29 2019
+  step 4500 lr 1 step-time 1.68s wps 3.74K ppl 304.64 gN 4.53 bleu 0.00, Wed Nov 27 20:30:17 2019
+  step 4600 lr 1 step-time 1.70s wps 3.74K ppl 304.90 gN 4.68 bleu 0.00, Wed Nov 27 20:33:07 2019
+  step 4700 lr 1 step-time 1.69s wps 3.73K ppl 299.25 gN 4.49 bleu 0.00, Wed Nov 27 20:35:56 2019
+  step 4800 lr 1 step-time 1.67s wps 3.71K ppl 291.46 gN 4.48 bleu 0.00, Wed Nov 27 20:38:43 2019
+  step 4900 lr 1 step-time 1.69s wps 3.69K ppl 285.95 gN 4.61 bleu 0.00, Wed Nov 27 20:41:33 2019
+  step 5000 lr 1 step-time 1.71s wps 3.69K ppl 285.12 gN 6.15 bleu 0.00, Wed Nov 27 20:44:23 2019
+# Save eval, global step 5000
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-5000, time 0.24s
+  # 2204
+    src: &quot; Man sollte von dem Prinzip ausgehen , dass Barcelonas größter Park der Strand ist .
+    ref: &quot; It should be assumed that the largest park in Barcelona is the beach .
+    nmt: The <unk> is the <unk> of the <unk> of the <unk> of the <unk> of the <unk> of the <unk> of the <unk> of the <unk> of the <unk> of the <unk>
+  loaded eval model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-5000, time 0.04s
+  eval dev: perplexity 563.53, time 28s, Wed Nov 27 20:44:53 2019.
+  eval test: perplexity 484.30, time 24s, Wed Nov 27 20:45:18 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-5000, time 0.25s
+  # 448
+    src: &quot; Schon vor dem Spiel sagt ich ihm , dass ihm heute ein Hattrick gelingt . &quot;
+    ref: &quot; I told him before the match he would score a hat ##AT##-##AT## trick . &quot;
+    nmt: The <unk> of the <unk> of the <unk> of the <unk> of the <unk> of the <unk> of the <unk> of the <unk> of the <unk> of the <unk> of the <unk> of the
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-5000, time 0.03s
+# External evaluation, global step 5000
+  decoding to output tmp/nmt_attention_model_DE_s10000_l2_u32/output_dev
+  done, num sentences 3003, num translations per input 1, time 57s, Wed Nov 27 20:46:16 2019.
+  bleu dev: 0.0
+  saving hparams to tmp/nmt_attention_model_DE_s10000_l2_u32/hparams
+# External evaluation, global step 5000
+  decoding to output tmp/nmt_attention_model_DE_s10000_l2_u32/output_test
+  done, num sentences 3000, num translations per input 1, time 52s, Wed Nov 27 20:47:10 2019.
+  bleu test: 0.0
+  saving hparams to tmp/nmt_attention_model_DE_s10000_l2_u32/hparams
+  step 5100 lr 1 step-time 1.68s wps 3.68K ppl 279.88 gN 4.73 bleu 0.00, Wed Nov 27 20:49:59 2019
+  step 5200 lr 1 step-time 1.67s wps 3.65K ppl 266.15 gN 5.43 bleu 0.00, Wed Nov 27 20:52:46 2019
+  step 5300 lr 1 step-time 1.70s wps 3.65K ppl 265.68 gN 5.82 bleu 0.00, Wed Nov 27 20:55:36 2019
+  step 5400 lr 1 step-time 1.66s wps 3.64K ppl 248.64 gN 4.49 bleu 0.00, Wed Nov 27 20:58:21 2019
+  step 5500 lr 1 step-time 1.70s wps 3.64K ppl 249.82 gN 4.74 bleu 0.00, Wed Nov 27 21:01:11 2019
+  step 5600 lr 1 step-time 1.67s wps 3.63K ppl 241.62 gN 4.74 bleu 0.00, Wed Nov 27 21:03:58 2019
+  step 5700 lr 1 step-time 1.69s wps 3.61K ppl 237.75 gN 5.06 bleu 0.00, Wed Nov 27 21:06:47 2019
+  step 5800 lr 1 step-time 1.68s wps 3.61K ppl 232.13 gN 4.48 bleu 0.00, Wed Nov 27 21:09:35 2019
+  step 5900 lr 1 step-time 1.66s wps 3.63K ppl 239.67 gN 4.44 bleu 0.00, Wed Nov 27 21:12:21 2019
+  step 6000 lr 1 step-time 1.67s wps 3.63K ppl 245.48 gN 4.44 bleu 0.00, Wed Nov 27 21:15:07 2019
+# Save eval, global step 6000
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-6000, time 0.26s
+  # 1029
+    src: Ohne das Umland lasse sich das Problem in den Städten nicht lösen , meinte Bürgermeister Wolfgang Kellner aus Leer .
+    ref: Without the surrounding area , the problem in the cities will not be solved , said Leer &apos;s mayor , Wolfgang Kellner .
+    nmt: <unk> <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the <unk> , the
+  loaded eval model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-6000, time 0.04s
+  eval dev: perplexity 391.78, time 30s, Wed Nov 27 21:15:38 2019.
+  eval test: perplexity 347.81, time 24s, Wed Nov 27 21:16:03 2019.
+  step 6100 lr 1 step-time 1.64s wps 3.63K ppl 240.94 gN 4.39 bleu 0.00, Wed Nov 27 21:18:48 2019
+  step 6200 lr 1 step-time 1.65s wps 3.65K ppl 253.32 gN 4.36 bleu 0.00, Wed Nov 27 21:21:32 2019
+  step 6300 lr 1 step-time 1.65s wps 3.66K ppl 259.90 gN 4.32 bleu 0.00, Wed Nov 27 21:24:17 2019
+  step 6400 lr 1 step-time 1.65s wps 3.65K ppl 272.32 gN 4.29 bleu 0.00, Wed Nov 27 21:27:02 2019
+  step 6500 lr 1 step-time 1.64s wps 3.67K ppl 269.57 gN 4.46 bleu 0.00, Wed Nov 27 21:29:47 2019
+  step 6600 lr 1 step-time 1.66s wps 3.67K ppl 276.78 gN 4.30 bleu 0.00, Wed Nov 27 21:32:32 2019
+  step 6700 lr 1 step-time 1.65s wps 3.68K ppl 268.01 gN 4.13 bleu 0.00, Wed Nov 27 21:35:18 2019
+  step 6800 lr 1 step-time 1.64s wps 3.70K ppl 274.54 gN 4.22 bleu 0.00, Wed Nov 27 21:38:02 2019
+  step 6900 lr 1 step-time 1.68s wps 3.69K ppl 284.17 gN 4.58 bleu 0.00, Wed Nov 27 21:40:50 2019
+  step 7000 lr 1 step-time 1.63s wps 3.70K ppl 283.97 gN 4.43 bleu 0.00, Wed Nov 27 21:43:33 2019
+# Save eval, global step 7000
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-7000, time 0.25s
+  # 1398
+    src: Laut Kapitol liegt es am Senat , diese Woche über eine konstitutionelle Änderung abzustimmen , die einen ausgeglichenen Haushalt fordert , eine Top ##AT##-##AT## Priorität in nahezu jeder Kongresslegislaturperiode der Republikaner und einiger Demokraten .
+    ref: Across the Capitol , the House is to vote this week on a constitutional amendment requiring a balanced budget , a top legislative priority of nearly every congressional Republican and some Democrats .
+    nmt: In the <unk> , the <unk> is a new ##AT##-##AT## <unk> ##AT##-##AT## <unk> ##AT##-##AT## <unk> ##AT##-##AT## <unk> <unk> , <unk> , <unk> , <unk> , <unk> , <unk> , <unk> , <unk> .
+  loaded eval model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-7000, time 0.04s
+  eval dev: perplexity 300.33, time 28s, Wed Nov 27 21:44:03 2019.
+  eval test: perplexity 258.93, time 24s, Wed Nov 27 21:44:28 2019.
+  step 7100 lr 1 step-time 1.64s wps 3.70K ppl 284.43 gN 4.46 bleu 0.00, Wed Nov 27 21:47:12 2019
+  step 7200 lr 1 step-time 1.65s wps 3.69K ppl 281.78 gN 4.43 bleu 0.00, Wed Nov 27 21:49:57 2019
+  step 7300 lr 1 step-time 1.64s wps 3.70K ppl 289.09 gN 5.46 bleu 0.00, Wed Nov 27 21:52:41 2019
+  step 7400 lr 1 step-time 1.63s wps 3.71K ppl 287.72 gN 4.36 bleu 0.00, Wed Nov 27 21:55:25 2019
+  step 7500 lr 1 step-time 1.64s wps 3.70K ppl 282.60 gN 4.23 bleu 0.00, Wed Nov 27 21:58:09 2019
+  step 7600 lr 1 step-time 1.66s wps 3.69K ppl 282.42 gN 4.36 bleu 0.00, Wed Nov 27 22:00:55 2019
+  step 7700 lr 1 step-time 1.63s wps 3.72K ppl 281.86 gN 4.37 bleu 0.00, Wed Nov 27 22:03:38 2019
+  step 7800 lr 1 step-time 1.64s wps 3.70K ppl 277.50 gN 4.16 bleu 0.00, Wed Nov 27 22:06:22 2019
+  step 7900 lr 1 step-time 1.64s wps 3.71K ppl 276.55 gN 4.28 bleu 0.00, Wed Nov 27 22:09:06 2019
+  step 8000 lr 1 step-time 1.66s wps 3.73K ppl 281.58 gN 4.54 bleu 0.00, Wed Nov 27 22:11:52 2019
+# Save eval, global step 8000
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-8000, time 0.25s
+  # 2513
+    src: Die Rechte lehnt die neuen Sparmaβnahmen ab
+    ref: The Right rejects new austerity measures
+    nmt: The <unk> is the same of the world .
+  loaded eval model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-8000, time 0.04s
+  eval dev: perplexity 300.05, time 28s, Wed Nov 27 22:12:22 2019.
+  eval test: perplexity 255.73, time 24s, Wed Nov 27 22:12:47 2019.
+  step 8100 lr 1 step-time 1.64s wps 3.73K ppl 276.42 gN 4.33 bleu 0.00, Wed Nov 27 22:15:31 2019
+  step 8200 lr 1 step-time 1.62s wps 3.72K ppl 276.56 gN 4.42 bleu 0.00, Wed Nov 27 22:18:13 2019
+  step 8300 lr 1 step-time 1.65s wps 3.73K ppl 276.57 gN 4.55 bleu 0.00, Wed Nov 27 22:20:59 2019
+  step 8400 lr 1 step-time 1.65s wps 3.73K ppl 268.98 gN 4.30 bleu 0.00, Wed Nov 27 22:23:44 2019
+  step 8500 lr 1 step-time 1.63s wps 3.73K ppl 267.36 gN 4.39 bleu 0.00, Wed Nov 27 22:26:26 2019
+  step 8600 lr 1 step-time 1.65s wps 3.74K ppl 268.12 gN 4.45 bleu 0.00, Wed Nov 27 22:29:12 2019
+  step 8700 lr 1 step-time 1.63s wps 3.72K ppl 263.96 gN 4.30 bleu 0.00, Wed Nov 27 22:31:54 2019
+  step 8800 lr 1 step-time 1.64s wps 3.72K ppl 267.70 gN 4.38 bleu 0.00, Wed Nov 27 22:34:38 2019
+  step 8900 lr 1 step-time 1.64s wps 3.73K ppl 259.29 gN 4.41 bleu 0.00, Wed Nov 27 22:37:22 2019
+  step 9000 lr 1 step-time 1.64s wps 3.73K ppl 259.49 gN 4.40 bleu 0.00, Wed Nov 27 22:40:07 2019
+# Save eval, global step 9000
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-9000, time 0.26s
+  # 560
+    src: &quot; Die Unterstützung durch Berbr , einen cleverem Businessman , bekäme dem Fußball doppelt schlecht &quot; , betonte Paclík .
+    ref: &quot; Combined with support from Berbr , a capable businessman , this would be even more harmful for the football , &quot; Paclík said .
+    nmt: <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+  loaded eval model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-9000, time 0.04s
+  eval dev: perplexity 347.86, time 29s, Wed Nov 27 22:40:37 2019.
+  eval test: perplexity 289.84, time 25s, Wed Nov 27 22:41:02 2019.
+  step 9100 lr 1 step-time 1.62s wps 3.74K ppl 258.75 gN 4.36 bleu 0.00, Wed Nov 27 22:43:44 2019
+  step 9200 lr 1 step-time 1.63s wps 3.73K ppl 253.55 gN 4.43 bleu 0.00, Wed Nov 27 22:46:27 2019
+  step 9300 lr 1 step-time 1.65s wps 3.75K ppl 254.23 gN 4.32 bleu 0.00, Wed Nov 27 22:49:12 2019
+  step 9400 lr 1 step-time 1.64s wps 3.73K ppl 250.16 gN 4.42 bleu 0.00, Wed Nov 27 22:51:56 2019
+  step 9500 lr 1 step-time 1.64s wps 3.73K ppl 251.74 gN 4.51 bleu 0.00, Wed Nov 27 22:54:39 2019
+  step 9600 lr 1 step-time 1.65s wps 3.73K ppl 251.63 gN 4.58 bleu 0.00, Wed Nov 27 22:57:25 2019
+  step 9700 lr 1 step-time 1.65s wps 3.75K ppl 248.83 gN 4.47 bleu 0.00, Wed Nov 27 23:00:09 2019
+  step 9800 lr 1 step-time 1.66s wps 3.74K ppl 254.22 gN 5.56 bleu 0.00, Wed Nov 27 23:02:55 2019
+  step 9900 lr 1 step-time 1.65s wps 3.74K ppl 246.29 gN 4.55 bleu 0.00, Wed Nov 27 23:05:40 2019
+  step 10000 lr 1 step-time 1.64s wps 3.74K ppl 241.04 gN 4.30 bleu 0.00, Wed Nov 27 23:08:24 2019
+# Save eval, global step 10000
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-10000, time 0.25s
+  # 538
+    src: &quot; Das ist keine Sache zwischen den Leuten aus Böhmen und Mähren , aber es gibt gewisse Bemühungen , die Vorschriften zu eigenen Zwecken &quot; zurechtzubiegen &quot; . &quot;
+    ref: &quot; It is not between people from Bohemia and Moravia , but there are attempts at purposeful adjustment of regulations . &quot;
+    nmt: &quot; <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>
+  loaded eval model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-10000, time 0.04s
+  eval dev: perplexity 295.15, time 30s, Wed Nov 27 23:08:55 2019.
+  eval test: perplexity 256.43, time 24s, Wed Nov 27 23:09:20 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-10000, time 0.24s
+  # 166
+    src: Er zeigte uns auch ganz konkret , was so eine so genannte &quot; Platztasche &quot; beinhalten muss .
+    ref: He also showed us what specifically a duty bag must contain .
+    nmt: The <unk> is not not not not not not not not not not not not not not not not not not not not not not not not not not not not not not not not not
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-10000, time 0.04s
+# External evaluation, global step 10000
+  decoding to output tmp/nmt_attention_model_DE_s10000_l2_u32/output_dev
+  done, num sentences 3003, num translations per input 1, time 59s, Wed Nov 27 23:10:21 2019.
+  bleu dev: 0.0
+  saving hparams to tmp/nmt_attention_model_DE_s10000_l2_u32/hparams
+# External evaluation, global step 10000
+  decoding to output tmp/nmt_attention_model_DE_s10000_l2_u32/output_test
+  done, num sentences 3000, num translations per input 1, time 54s, Wed Nov 27 23:11:16 2019.
+  bleu test: 0.0
+  saving hparams to tmp/nmt_attention_model_DE_s10000_l2_u32/hparams
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-10000, time 0.24s
+  # 76
+    src: Die Speisekarte eines fettsüchtigen Kindes : Es frühstückt nicht und isst zum Abendbrot Wurst
+    ref: An Obese Child &apos;s Diet : No breakfast and sausage for dinner
+    nmt: The <unk> is not not not not not not not not not not not not not not not not not not not not not not not not not
+  loaded eval model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-10000, time 0.04s
+  eval dev: perplexity 295.15, time 30s, Wed Nov 27 23:11:48 2019.
+  eval test: perplexity 256.43, time 24s, Wed Nov 27 23:12:13 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/translate.ckpt-10000, time 0.04s
+# External evaluation, global step 10000
+  decoding to output tmp/nmt_attention_model_DE_s10000_l2_u32/output_dev
+  done, num sentences 3003, num translations per input 1, time 58s, Wed Nov 27 23:13:12 2019.
+  bleu dev: 0.0
+  saving hparams to tmp/nmt_attention_model_DE_s10000_l2_u32/hparams
+# External evaluation, global step 10000
+  decoding to output tmp/nmt_attention_model_DE_s10000_l2_u32/output_test
+  done, num sentences 3000, num translations per input 1, time 53s, Wed Nov 27 23:14:06 2019.
+  bleu test: 0.0
+  saving hparams to tmp/nmt_attention_model_DE_s10000_l2_u32/hparams
+# Final, step 10000 lr 1 step-time 1.64s wps 3.74K ppl 241.04 gN 4.30 dev ppl 295.15, dev bleu 0.0, test ppl 256.43, test bleu 0.0, Wed Nov 27 23:14:07 2019
+# Done training!, time 17877s, Wed Nov 27 23:14:07 2019.
+# Start evaluating saved best models.
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/best_bleu/translate.ckpt-10000, time 0.04s
+  # 2625
+    src: &quot; Wäre die Zahlungsfähigkeit Österreichs nicht auf einen Schlag von AAA auf AA + gesunken , so müssten wir jedes Jahr drei Milliarden Euro Zinsen zusätzlich zahlen &quot; , argumentierte Michael Spindelegger , Vize ##AT##-##AT## Kanzler und christdemokratischer Auβenminister .
+    ref: &quot; If the solvency of Austria had not fallen by a single notch , from AAA to AA + , we would have to pay three thousand million Euros of interest more every year , &quot; argued the vice ##AT##-##AT## chancellor and Christian democratic foreign minister , Michael Spindelegger .
+    nmt: &quot; The <unk> &quot; is not not not not not not not not not not not not not not not not not not not not not not not not not not not not not not available .
+  loaded eval model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/best_bleu/translate.ckpt-10000, time 0.04s
+  eval dev: perplexity 295.15, time 29s, Wed Nov 27 23:14:36 2019.
+  eval test: perplexity 256.43, time 24s, Wed Nov 27 23:15:01 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_DE_s10000_l2_u32/best_bleu/translate.ckpt-10000, time 0.04s
+# External evaluation, global step 10000
+  decoding to output tmp/nmt_attention_model_DE_s10000_l2_u32/output_dev
+  done, num sentences 3003, num translations per input 1, time 58s, Wed Nov 27 23:16:00 2019.
+  bleu dev: 0.0
+  saving hparams to tmp/nmt_attention_model_DE_s10000_l2_u32/hparams
+# External evaluation, global step 10000
+  decoding to output tmp/nmt_attention_model_DE_s10000_l2_u32/output_test
+  done, num sentences 3000, num translations per input 1, time 53s, Wed Nov 27 23:16:54 2019.
+  bleu test: 0.0
+  saving hparams to tmp/nmt_attention_model_DE_s10000_l2_u32/hparams
+# Best bleu, step 10000 lr 1 step-time 1.64s wps 3.74K ppl 241.04 gN 4.30 dev ppl 295.15, dev bleu 0.0, test ppl 256.43, test bleu 0.0, Wed Nov 27 23:16:55 2019

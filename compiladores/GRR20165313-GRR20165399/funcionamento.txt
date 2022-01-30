@@ -1,0 +1,3 @@
+Notamos as seguintes diferenças ao executar os testes:
+- Um dos programas de teste faz uso de rotulos, causando erro no compilador, pois rotulos nao foram implementados;
+- A ordem dos rotulos da MEPA gerados pelo nosso compilador eh diferente da dos rotulos gerados pelo compilador do professor.

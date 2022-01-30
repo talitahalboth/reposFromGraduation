@@ -1,0 +1,105 @@
+=============================================================================
+Inicio da Execução: programa que implementa um servidor sobre TCP
+Stephanie Briere Americo e Talita Halboth Cunha Fernandes
+Disciplina de Redes II
+=============================================================================
+----------------------
+Log type: Info
+Source: main
+Mensagem: Iniciando servidor
+----------------------
+----------------------
+Log type: Info
+Source: main
+Mensagem: Servidor inicializado
+----------------------
+----------------------
+Log type: Info
+Source: main
+Mensagem: Conexão com ('127.0.0.1', 57074) iniciada
+----------------------
+----------------------
+Log type: Info
+Source: main
+Mensagem: p enviado, 2293
+----------------------
+----------------------
+Log type: Info
+Source: main
+Mensagem: g enviado, 2
+----------------------
+----------------------
+Log type: Info
+Source: main
+Mensagem: x enviado, 2084
+----------------------
+----------------------
+Log type: Info
+Source: main
+Mensagem: esperando y
+----------------------
+----------------------
+Log type: Info
+Source: main
+Mensagem: y recebido, 2101
+----------------------
+----------------------
+Log type: Success
+Source: main
+Mensagem: Chave secreta calculada: 1877
+----------------------
+----------------------
+Log type: Success
+Source: main
+Mensagem: Corrompendo a chave propositalmente: 18770
+----------------------
+----------------------
+Log type: Info
+Source: ReceiveEncryptedMessage
+Mensagem: Esperando mensagem
+----------------------
+----------------------
+Log type: Info
+Source: ReceiveEncryptedMessage
+Mensagem: Mensagem recebida: b'\xe3\x84-o2\x14\xf3\xc3\x1a[r?\x8a\x01^6\xb29\xd1\xf3\x1a\xecL]\xf8\x049q\xc0\x08x\x89'
+----------------------
+----------------------
+Log type: Info
+Source: ReceiveEncryptedMessage
+Mensagem: Mensagem descriptografada binaria:
+b'\xd4a#\xa8\xb1\xe9\xb6\xb6\xb0Sq6\x96!q\x8a\x18\xe9\x91\xe4\xaes\x9a\xcc:\xe0\xfc\xd1z\x13\xb3\xd0'
+----------------------
+----------------------
+Log type: Error
+Source: CheckHeader
+Mensagem: Checksum MD5 não confere!
+----------------------
+----------------------
+Log type: Error
+Source: ReceiveEncryptedMessage
+Mensagem: Erro ao descriptografar a mensagem
+----------------------
+Digite a mensagem a ser enviada:
+Algo deu errado, cliente.
+----------------------
+Log type: Info
+Source: SendEncryptedMessage
+Mensagem: Mensagem descriptografada binaria:
+b'\xf5\xa1cr\x1a(R\x93\xd0.7\xbd`\x9f\x1c\xaeAlgo deu errado, cliente.\x00\x00\x00\x00\x00\x00\x00'
+----------------------
+----------------------
+Log type: Info
+Source: SendEncryptedMessage
+Mensagem: Mensagem criptografada:
+b'{\xce\x99\x92\xeai:\x8eO\xb7\xa2\x10\x89y\xa3\x81\xc1\xa5\xb3G\xfd\x10\xa7\xd4\x99\xb9\xee\t\xcfa\xcea"\x06X\xab%\\\x99+\x92vG\xe3\xa9\x90EP'
+----------------------
+----------------------
+Log type: Info
+Source: SendEncryptedMessage
+Mensagem: Mensagem enviada
+----------------------
+----------------------
+Log type: Info
+Source: ReceiveEncryptedMessage
+Mensagem: Esperando mensagem
+----------------------

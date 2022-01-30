@@ -1,0 +1,72 @@
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz
+CPU type:	Intel Core Haswell processor
+CPU clock:	3.39 GHz
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Region OP1, Group 1: L3
++-------------------+----------+
+|    Region Info    |  Core 2  |
++-------------------+----------+
+| RDTSC Runtime [s] | 8.930161 |
+|     call count    |       11 |
++-------------------+----------+
+
++-----------------------+---------+-------------+
+|         Event         | Counter |    Core 2   |
++-----------------------+---------+-------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 83161970000 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 34715840000 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 30269100000 |
+|    L2_LINES_IN_ALL    |   PMC0  |  1771285000 |
+|     L2_TRANS_L2_WB    |   PMC1  |     3007254 |
++-----------------------+---------+-------------+
+
++-------------------------------+------------+
+|             Metric            |   Core 2   |
++-------------------------------+------------+
+|      Runtime (RDTSC) [s]      |     8.9302 |
+|      Runtime unhalted [s]     |    10.2342 |
+|          Clock [MHz]          |  3890.4507 |
+|              CPI              |     0.4174 |
+|  L3 load bandwidth [MBytes/s] | 12694.3109 |
+|  L3 load data volume [GBytes] |   113.3622 |
+| L3 evict bandwidth [MBytes/s] |    21.5522 |
+| L3 evict data volume [GBytes] |     0.1925 |
+|    L3 bandwidth [MBytes/s]    | 12715.8630 |
+|    L3 data volume [GBytes]    |   113.5547 |
++-------------------------------+------------+
+
+Region OP2, Group 1: L3
++-------------------+----------+
+|    Region Info    |  Core 2  |
++-------------------+----------+
+| RDTSC Runtime [s] | 7.784409 |
+|     call count    |       10 |
++-------------------+----------+
+
++-----------------------+---------+-------------+
+|         Event         | Counter |    Core 2   |
++-----------------------+---------+-------------+
+|   INSTR_RETIRED_ANY   |  FIXC0  | 60310630000 |
+| CPU_CLK_UNHALTED_CORE |  FIXC1  | 30245170000 |
+|  CPU_CLK_UNHALTED_REF |  FIXC2  | 26370280000 |
+|    L2_LINES_IN_ALL    |   PMC0  |  1266135000 |
+|     L2_TRANS_L2_WB    |   PMC1  |      904743 |
++-----------------------+---------+-------------+
+
++-------------------------------+------------+
+|             Metric            |   Core 2   |
++-------------------------------+------------+
+|      Runtime (RDTSC) [s]      |     7.7844 |
+|      Runtime unhalted [s]     |     8.9163 |
+|          Clock [MHz]          |  3890.5682 |
+|              CPI              |     0.5015 |
+|  L3 load bandwidth [MBytes/s] | 10409.6072 |
+|  L3 load data volume [GBytes] |    81.0326 |
+| L3 evict bandwidth [MBytes/s] |     7.4384 |
+| L3 evict data volume [GBytes] |     0.0579 |
+|    L3 bandwidth [MBytes/s]    | 10417.0456 |
+|    L3 data volume [GBytes]    |    81.0905 |
++-------------------------------+------------+
+

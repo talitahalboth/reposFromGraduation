@@ -1,0 +1,193 @@
+WARNING:tensorflow:From nmt/utils/iterator_utils.py:235: group_by_window (from tensorflow.contrib.data.python.ops.grouping) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.experimental.group_by_window(...)`.
+WARNING:tensorflow:From nmt/model_helper.py:402: __init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is deprecated, please use tf.nn.rnn_cell.LSTMCell, which supports all the feature this cell currently has. Please replace the existing code with tf.nn.rnn_cell.LSTMCell(name='basic_lstm_cell').
+2019-11-29 19:10:36.850933: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 19:10:36.850953: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:10:36.850975: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:22:15.788938: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 19:22:15.789190: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:22:15.789233: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:22:15.947981: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 19:22:15.947990: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:22:15.947998: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:33:10.492405: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:33:10.492473: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:33:10.492434: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 19:33:10.722117: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 19:33:10.722176: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:33:10.722385: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:33:25.884043: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 19:33:25.884125: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:33:25.884171: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:33:26.053967: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 19:33:26.054002: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:33:26.054014: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:33:40.373228: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.vi is already initialized.
+2019-11-29 19:33:40.373247: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:33:40.373248: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file tmp/iwslt15/vocab.en is already initialized.
+2019-11-29 19:34:44.463846: W tensorflow/core/framework/op_kernel.cc:1273] OP_REQUIRES failed at tensor_array_ops.cc:676 : Resource exhausted: OOM when allocating tensor with shape[246,32,17191] and type float on /job:localhost/replica:0/task:0/device:CPU:0 by allocator cpu
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/runpy.py", line 174, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/usr/lib/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/nobackup/bcc/thcf16/nmt/nmt/nmt.py", line 707, in <module>
+    tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "/nobackup/bcc/thcf16/nmt/nmt/nmt.py", line 700, in main
+    run_main(FLAGS, default_hparams, train_fn, inference_fn)
+  File "/nobackup/bcc/thcf16/nmt/nmt/nmt.py", line 693, in run_main
+    train_fn(hparams, target_session=target_session)
+  File "nmt/train.py", line 607, in train
+    summary_writer, sample_src_data, sample_tgt_data, avg_ckpts))
+  File "nmt/train.py", line 341, in run_full_eval
+    summary_writer, avg_ckpts)
+  File "nmt/train.py", line 279, in run_internal_and_external_eval
+    test_infer_iterator_feed_dict=test_infer_iterator_feed_dict)
+  File "nmt/train.py", line 197, in run_external_eval
+    avg_ckpts=avg_ckpts)
+  File "nmt/train.py", line 730, in _external_eval
+    infer_mode=hparams.infer_mode)
+  File "nmt/utils/nmt_utils.py", line 60, in decode_and_evaluate
+    nmt_outputs, _ = model.decode(sess)
+  File "nmt/model.py", line 692, in decode
+    output_tuple = self.infer(sess)
+  File "nmt/model.py", line 680, in infer
+    return sess.run(output_tuple)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 929, in run
+    run_metadata_ptr)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1152, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1328, in _do_run
+    run_metadata)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1348, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: OOM when allocating tensor with shape[246,32,17191] and type float on /job:localhost/replica:0/task:0/device:CPU:0 by allocator cpu
+	 [[node dynamic_seq2seq/decoder/decoder/TensorArrayStack/TensorArrayGatherV3 (defined at /nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/contrib/seq2seq/python/ops/decoder.py:328)  = TensorArrayGatherV3[dtype=DT_FLOAT, element_shape=[?,17191], _device="/job:localhost/replica:0/task:0/device:CPU:0"](dynamic_seq2seq/decoder/decoder/TensorArray, dynamic_seq2seq/decoder/decoder/TensorArrayStack/range, dynamic_seq2seq/decoder/decoder/while/Exit_2)]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+
+Caused by op u'dynamic_seq2seq/decoder/decoder/TensorArrayStack/TensorArrayGatherV3', defined at:
+  File "/usr/lib/python2.7/runpy.py", line 174, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/usr/lib/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/nobackup/bcc/thcf16/nmt/nmt/nmt.py", line 707, in <module>
+    tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/platform/app.py", line 125, in run
+    _sys.exit(main(argv))
+  File "/nobackup/bcc/thcf16/nmt/nmt/nmt.py", line 700, in main
+    run_main(FLAGS, default_hparams, train_fn, inference_fn)
+  File "/nobackup/bcc/thcf16/nmt/nmt/nmt.py", line 693, in run_main
+    train_fn(hparams, target_session=target_session)
+  File "nmt/train.py", line 467, in train
+    infer_model = model_helper.create_infer_model(model_creator, hparams, scope)
+  File "nmt/model_helper.py", line 228, in create_infer_model
+    extra_args=extra_args)
+  File "nmt/attention_model.py", line 64, in __init__
+    extra_args=extra_args)
+  File "nmt/model.py", line 95, in __init__
+    res = self.build_graph(hparams, scope=scope)
+  File "nmt/model.py", line 393, in build_graph
+    self._build_decoder(self.encoder_outputs, encoder_state, hparams))
+  File "nmt/model.py", line 587, in _build_decoder
+    scope=decoder_scope)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/contrib/seq2seq/python/ops/decoder.py", line 328, in dynamic_decode
+    final_outputs = nest.map_structure(lambda ta: ta.stack(), final_outputs_ta)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/util/nest.py", line 381, in map_structure
+    structure[0], [func(*x) for x in entries])
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/contrib/seq2seq/python/ops/decoder.py", line 328, in <lambda>
+    final_outputs = nest.map_structure(lambda ta: ta.stack(), final_outputs_ta)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/ops/tensor_array_ops.py", line 856, in stack
+    return self._implementation.stack(name=name)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/ops/tensor_array_ops.py", line 289, in stack
+    return self.gather(math_ops.range(0, self.size()), name=name)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/ops/tensor_array_ops.py", line 303, in gather
+    element_shape=element_shape)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/ops/gen_data_flow_ops.py", line 6031, in tensor_array_gather_v3
+    flow_in=flow_in, dtype=dtype, element_shape=element_shape, name=name)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/util/deprecation.py", line 488, in new_func
+    return func(*args, **kwargs)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 3274, in create_op
+    op_def=op_def)
+  File "/nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 1770, in __init__
+    self._traceback = tf_stack.extract_stack()
+
+ResourceExhaustedError (see above for traceback): OOM when allocating tensor with shape[246,32,17191] and type float on /job:localhost/replica:0/task:0/device:CPU:0 by allocator cpu
+	 [[node dynamic_seq2seq/decoder/decoder/TensorArrayStack/TensorArrayGatherV3 (defined at /nobackup/bcc/thcf16/nmt/venv/local/lib/python2.7/site-packages/tensorflow/contrib/seq2seq/python/ops/decoder.py:328)  = TensorArrayGatherV3[dtype=DT_FLOAT, element_shape=[?,17191], _device="/job:localhost/replica:0/task:0/device:CPU:0"](dynamic_seq2seq/decoder/decoder/TensorArray, dynamic_seq2seq/decoder/decoder/TensorArrayStack/range, dynamic_seq2seq/decoder/decoder/while/Exit_2)]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info.
+
+
+odel_VI_s10000_l4_u256/translate.ckpt-8000, time 0.10s
+# External evaluation, global step 8000
+  decoding to output tmp/nmt_attention_model_VI_s10000_l4_u256/output_dev
+  done, num sentences 1553, num translations per input 1, time 29s, Fri Nov 29 19:11:06 2019.
+  bleu dev: 3.4
+  saving hparams to tmp/nmt_attention_model_VI_s10000_l4_u256/hparams
+# External evaluation, global step 8000
+  decoding to output tmp/nmt_attention_model_VI_s10000_l4_u256/output_test
+  done, num sentences 1268, num translations per input 1, time 27s, Fri Nov 29 19:11:34 2019.
+  bleu test: 2.9
+  saving hparams to tmp/nmt_attention_model_VI_s10000_l4_u256/hparams
+# Start step 8000, lr 1, Fri Nov 29 19:11:34 2019
+# Init train iterator, skipping 0 elements
+  step 8100 lr 1 step-time 0.68s wps 4.03K ppl 57.39 gN 4.35 bleu 3.36, Fri Nov 29 19:12:42 2019
+  step 8200 lr 1 step-time 0.64s wps 4.45K ppl 58.27 gN 4.54 bleu 3.36, Fri Nov 29 19:13:46 2019
+  step 8300 lr 1 step-time 0.64s wps 4.43K ppl 56.45 gN 4.66 bleu 3.36, Fri Nov 29 19:14:50 2019
+  step 8400 lr 1 step-time 0.64s wps 4.42K ppl 55.10 gN 4.64 bleu 3.36, Fri Nov 29 19:15:54 2019
+  step 8500 lr 1 step-time 0.64s wps 4.41K ppl 54.46 gN 4.72 bleu 3.36, Fri Nov 29 19:16:57 2019
+  step 8600 lr 1 step-time 0.63s wps 4.41K ppl 52.91 gN 4.72 bleu 3.36, Fri Nov 29 19:18:01 2019
+  step 8700 lr 1 step-time 0.64s wps 4.41K ppl 53.62 gN 4.98 bleu 3.36, Fri Nov 29 19:19:05 2019
+  step 8800 lr 1 step-time 0.63s wps 4.41K ppl 50.32 gN 4.93 bleu 3.36, Fri Nov 29 19:20:08 2019
+  step 8900 lr 1 step-time 0.63s wps 4.39K ppl 49.22 gN 4.88 bleu 3.36, Fri Nov 29 19:21:12 2019
+  step 9000 lr 1 step-time 0.63s wps 4.36K ppl 48.09 gN 4.81 bleu 3.36, Fri Nov 29 19:22:15 2019
+# Save eval, global step 9000
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u256/translate.ckpt-9000, time 0.13s
+  # 1446
+    src: Nên bạn không thể đặt chúng sai được .
+    ref: So you can &apos;t put them the wrong way .
+    nmt: So you can &apos;t do it .
+  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u256/translate.ckpt-9000, time 0.11s
+  eval dev: perplexity 39.13, time 7s, Fri Nov 29 19:22:23 2019.
+  eval test: perplexity 43.26, time 6s, Fri Nov 29 19:22:30 2019.
+  step 9100 lr 1 step-time 0.64s wps 4.39K ppl 48.99 gN 5.03 bleu 3.36, Fri Nov 29 19:23:34 2019
+  step 9200 lr 1 step-time 0.63s wps 4.40K ppl 47.86 gN 5.09 bleu 3.36, Fri Nov 29 19:24:38 2019
+  step 9300 lr 1 step-time 0.64s wps 4.42K ppl 45.77 gN 5.13 bleu 3.36, Fri Nov 29 19:25:42 2019
+  step 9400 lr 1 step-time 0.64s wps 4.39K ppl 44.54 gN 5.24 bleu 3.36, Fri Nov 29 19:26:46 2019
+  step 9500 lr 1 step-time 0.64s wps 4.39K ppl 43.08 gN 5.19 bleu 3.36, Fri Nov 29 19:27:50 2019
+  step 9600 lr 1 step-time 0.63s wps 4.43K ppl 41.05 gN 5.11 bleu 3.36, Fri Nov 29 19:28:53 2019
+  step 9700 lr 1 step-time 0.64s wps 4.46K ppl 42.27 gN 5.34 bleu 3.36, Fri Nov 29 19:29:57 2019
+  step 9800 lr 1 step-time 0.64s wps 4.42K ppl 40.71 gN 5.38 bleu 3.36, Fri Nov 29 19:31:01 2019
+  step 9900 lr 1 step-time 0.64s wps 4.44K ppl 39.10 gN 5.43 bleu 3.36, Fri Nov 29 19:32:05 2019
+  step 10000 lr 1 step-time 0.64s wps 4.45K ppl 37.79 gN 5.50 bleu 3.36, Fri Nov 29 19:33:09 2019
+# Save eval, global step 10000
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u256/translate.ckpt-10000, time 0.12s
+  # 120
+    src: Và tôi đến đây tôi lại được khuyến khích và rồi tôi lắng nghe chính điều này đã tiếp thêm nghị lực cho tôi rất nhiều
+    ref: And being here at TED and seeing the stimulation , hearing it , has been very , very energizing to me .
+    nmt: And I was so excited to be <unk> and I was <unk> to me , and I was <unk> to me .
+  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u256/translate.ckpt-10000, time 0.11s
+  eval dev: perplexity 32.85, time 7s, Fri Nov 29 19:33:18 2019.
+  eval test: perplexity 35.29, time 6s, Fri Nov 29 19:33:24 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u256/translate.ckpt-10000, time 0.13s
+  # 908
+    src: Và ai có thể dự đoán bất cứ gì về điều này ?
+    ref: And who could have predicted any of this ?
+    nmt: And who can &apos;t be able to do this ?
+  loaded eval model parameters from tmp/nmt_attention_model_VI_s10000_l4_u256/translate.ckpt-10000, time 0.10s
+  eval dev: perplexity 32.85, time 7s, Fri Nov 29 19:33:33 2019.
+  eval test: perplexity 35.29, time 6s, Fri Nov 29 19:33:40 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s10000_l4_u256/translate.ckpt-10000, time 0.10s
+# External evaluation, global step 10000
+  decoding to output tmp/nmt_attention_model_VI_s10000_l4_u256/output_dev
+  done, num sentences 1553, num translations per input 1, time 41s, Fri Nov 29 19:34:21 2019.
+  bleu dev: 4.3
+  saving hparams to tmp/nmt_attention_model_VI_s10000_l4_u256/hparams
+# External evaluation, global step 10000
+  decoding to output tmp/nmt_attention_model_VI_s10000_l4_u256/output_test

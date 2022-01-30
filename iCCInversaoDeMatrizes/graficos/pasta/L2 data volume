@@ -1,0 +1,66 @@
+32 Original
+0.0007
+0.0008
+32 Otimizado
+0.0007
+0.0009
+33 Original
+0.0007
+0.0009
+33 Otimizado
+0.0007
+0.0009
+64 Original
+0.0188
+0.0456
+64 Otimizado
+0.0025
+0.0171
+65 Original
+0.0070
+0.0134
+65 Otimizado
+0.0026
+0.0193
+128 Original
+1.5874
+1.3708
+128 Otimizado
+0.2111
+0.1741
+129 Original
+0.2224
+0.1732
+129 Otimizado
+0.2462
+0.1766
+256 Original
+13.6915
+10.8597
+256 Otimizado
+1.6405
+1.3660
+257 Original
+2.2325
+2.5162
+257 Otimizado
+1.7900
+1.3766
+512 Original
+108.8105
+86.6419
+512 Otimizado
+13.1362
+10.8788
+1000 Original
+633.3813
+776.0479
+1000 Otimizado
+93.7648
+80.8225
+2000 Original
+8272.8242
+8295.5662
+2000 Otimizado
+736.2197
+666.1810

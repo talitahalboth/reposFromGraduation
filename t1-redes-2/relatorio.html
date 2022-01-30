@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>Trabalho Prático - Redes II</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+
+    <body>
+        <p></p>
+        <div align="CENTER">
+            <b>Universidade Federal do Paraná <br>
+            Departamento de Informática <br>
+            Bacharelado em Ciência da Computação <br>
+            
+            <p></p>
+            
+            Stephanie Briere Americo - GRR20165313 <br>
+            Talita Halboth Cunha Fernandes - GRR20165389</b>
+            
+            <p></p>
+
+            <b>Trabalho Prático de Redes de Computadores II - Turma 2021/ERE3 <br>
+            Estabelecimento de Chave Secreta com Diffie-Hellman</b>
+        </div>
+
+        <p></p>
+
+        <h4>Log de reuniões e decisões:</h4>
+        <ol>
+            <li>
+                <b>28/07/2021: Reunião pela plataforma <i>Meets</i>.</b> <br>
+                <ul>
+                    <li>Lemos a especificação e discutimos até chegar a um entendimento que fazia sentido para ambas as partes.</li>
+                    <li>Decidimos utilizar a linguagem Python pela simplicidade e o vasto número de bibliotecas disponíveis.</li>
+                    <li>Decidimos optar pela cripitografia 
+                        <a href="https://pt.wikipedia.org/wiki/Data_Encryption_Standard">Data Encryption Standard (DES)</a>,
+                    pois já havíamos estudado seu funcionamento na disciplina optativa de Criptografia.</li>
+                    <li>Iniciamos uma sessão de <i>pair programming</i> (programação pareada) para implementar um sistema 
+                        cliente-servidor básico em Python com o protocolo TCP/IP. 
+                        Por conta da pandemia, o <i>pair programming</i> foi feito por meio de compartilhamento de tela,
+                        com ambas as partes discutindo cada passo da implementação e pesquisando como realizar a implementação.</li>
+                </ul>
+            </li>
+            <li>
+                <b>29/07/2021: Reunião pela plataforma <i>Discord</i>.</b> <br>
+                <ul>
+                    <li>Com a conexão cliente-servidor já feita, iniciamos outra sessão de <i>pair programming</i> para implementar
+                        o estabelecimento de chave secreta com
+                        <a href="https://pt.wikipedia.org/wiki/Troca_de_chaves_de_Diffie%E2%80%93Hellman">Diffie-Hellman</a>.</li>
+                    <li>Com a chave estabelecida, pesquisamos bibliotecas que implementassem o algoritmo DES para usar na 
+                        criptografia das mensagens entre cliente-servidor. Testamos algumas opções e optamos utilizar
+                        a biblioteca 
+                        <a href="https://pycryptodome.readthedocs.io/">PyCryptodome</a>, pois constatamos que é bem
+                        documentada e possui uma gama de algoritmos interessantes.</li>
+                    <li>Implementamos a troca de mensagens cliente-servidor com o algoritmo DES.</li>
+                </ul>
+            </li>
+            <li>
+                <b>30/07/2021: Reunião pela plataforma <i>Discord</i>.</b> <br>
+                <ul>
+                    <li>Iniciamos mais uma sessão de <i>pair programming</i> para criar um esquema de logs legível e 
+                        bastante descritivo no servidor e cliente.</li>
+                    <li>Decidimos deixar cliente e servidor trocando mensagens indefinidamente.</li>
+                </ul>
+            </li>
+            <li>
+                <b>01/08/2021: Reunião pela plataforma <i>Discord</i>.</b> <br>
+                <ul>
+                    <li>Com o código funcional, decidimos enviar um e-mail para o professor afim de nos certificarmos
+                        que nossa implementação da troca de mensagens é sucifiente para demonstração de funcionamento
+                        do algortimo.</li>
+                    <li>Produção do relatório em HTML e hospedagem no site do departamento.</li>
+                </ul>
+            </li>
+            <li>
+                <b>02/08/2021: Reunião pela plataforma <i>Discord</i>.</b> <br>
+                <ul>
+                    <li>Recebemos a resposta do professor confirmando que o algoritmo parece bom, porém lembramos 
+                        da necessidade de mostrar o caso da chave secreta estar errada.</li>
+                    <li>Decidimos implementar um parâmetro que fizesse o servidor corromper a chave secreta
+                        propositalmente, simulando a troca de mensagens com a chave secreta incorreta. </li>
+                    <li>Iniciamos (novamente!) uma sessão de <i>pair programming</i> para implementar o
+                        parâmetro <i>-wk (wrong key)</i>.</li>
+                    <li>Adicionamos checksum MD5 no header das mensagens, tornando possível detectar problemas 
+                        nas mensagens (como descriptografar com chave secreta incorreta).</li>
+                    <li>Decidimos reestruturar o código, separando as funções úteis e o esquema de logs
+                        para cliente e servidor em uma biblioteca a parte, eliminando a duplicação de código.</li>
+                    <li>Realizamos testes extensivamente, afim de garantir que o trabalho está funcional.</li>
+                    <li>Criamos logs para chave secreta correta e incorreta.</li>
+                    <li>Atualização do relatório em HTML e hospedagem no site do departamento.</li>
+                </ul>
+            </li>
+            <li>
+                <b>03/08/2021: Criação de mais logs.</b> <br>
+            </li>
+        </ol>
+
+        <p></p>
+
+        <h4>Logs de execução do programa:</h4>
+        <ul>
+            <li>Logs de execução normal (ambos com chave secreta correta) possuem nome <i>runXCliente.txt</i> e <i>runXServidor.txt</i></li>
+            <li>Logs de execução simulando erro (servidor com chave secreta incorreta) possuem nome <i>runComFalhaXCliente.txt</i> e <i>runComFalhaXServidor.txt</i></li>
+            <li>Diretório com logs:
+                <a href="logs/">Logs</a></li>
+        </ul>
+
+        <p></p>
+
+        <h4>Código fonte:</h4>
+        <ul>
+            <li><a href="cliente.py.txt">Cliente</a>: código do cliente</li>
+            <li><a href="servidor.py.txt">Servidor</a>: código do servidor</li>
+	        <li><a href="utils.py.txt">Utils</a>: biblioteca de funções úteis para cliente e servidor</li>
+	        <li><a href="log.py.txt">Log</a>: biblioteca de funções para esquema de logs detalhado</li>
+        </ul>
+
+        <p></p>
+
+        <h4>Execução do programa:</h4>
+        <ol>
+            <li>
+                Instale o pacote necessário para a criptografia DES.
+                <pre class="bash"> pip install pycryptodome </pre>
+            </li>
+            <li>
+                Execute o servidor, inserindo a porta desejada.
+                <pre class="bash"> python servidor.py <i>< port ></i> </pre>
+                Alternativamente, utilize o parâmetro <i>-wk</i> para iniciar o modo de simulação do servidor 
+                com chave secreta incorreta.
+                <pre class="bash"> python servidor.py <i>< port ></i> -wk</pre>
+            </li>
+            <li>
+                Execute o cliente, inserindo o seu <i>hostname</i> e a mesma porta do passo anterior. 
+                <pre class="bash"> python cliente.py <i>< hostname ></i> <i>< port ></i> </pre>
+                Obs.: Para descobrir seu <i>hostname</i>, execute o comando <pre class="bash">hostname</pre>
+                ou utilize o endereço <pre class="bash">127.0.0.1</pre>
+            </li>
+            <li>
+                Após a conexão ser estabelecida, insira a mensagem a ser enviada pelo cliente ao servidor.
+            </li>
+            <li>
+                Insira a mensagem a ser enviada pelo servidor ao cliente.
+            </li>
+            <li>
+                Você poderá manter a troca de mensagens cliente-servidor indefinidamente.
+            </li>
+        </ol>
+    </body>
+</html>

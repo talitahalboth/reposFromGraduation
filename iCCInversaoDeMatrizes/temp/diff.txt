@@ -1,0 +1,132 @@
+63c63
+< int fatoracaoLU (MATRIZ * restrict matriz, int *trocas) ;
+---
+> int fatoracaoLU (MATRIZ *  matriz, int *  trocas);
+80c80
+< void substituicao_Lyb (MATRIZ L, MATRIZ * restrict y, double * restrict b);
+---
+> void substituicao_Lyb (MATRIZ L, MATRIZ * y, double * b);
+100c100
+< int substituicao_Uxy (MATRIZ U, MATRIZ * restrict y, double * restrict b);
+---
+> int substituicao_Uxy (MATRIZ U, MATRIZ * y, double * b);
+121c121
+< int refinamento(MATRIZ A, MATRIZ * restrict inv_A, MATRIZ LU, double * restrict aux, int iter, double *tempoIter, double *tempoResiduo);
+---
+> int refinamento(MATRIZ A, MATRIZ * inv_A, MATRIZ LU, double * aux, int iter, double *tempoIter, double *tempoResiduo);
+138c138
+< int calculaResiduo(MATRIZ A, MATRIZ inv_A, MATRIZ * restrict R, int iter, double *tempoResiduo);
+---
+> int calculaResiduo(MATRIZ A, MATRIZ inv_A, MATRIZ * R, int iter, double *tempoResiduo);
+153a154,164
+> 
+> inline int LUpos (int lin, int col, int tam);
+> 
+> 
+> void fun (MATRIZ a, MATRIZ *b)
+> {
+> 	for (int i = 0; i < a.tam; ++i)
+> 		for (int j = 0; j < a.tam; ++j)
+> 			b->dados[LUpos(i,j,a.tam)] = a.dados[pos(i,j,a.tam)];
+> }
+> 
+159c170
+< 	int * restrict trocas; // vetor que guarda historico do pivotamento
+---
+> 	int * trocas; // vetor que guarda historico do pivotamento
+215a227,240
+> 
+> 	inversa.tam = n; 
+> 	if(alocaMatrizQuadrada(&inversa) == -1) {
+> 		fprintf(stderr, "[main] Erro ao alocar a matriz inversa\n");
+> 		return -1;
+> 	} 
+> 
+> 
+> 	for (int i = 0; i < n*n; ++i)
+> 		inversa.dados[i] = originalLU.dados[i];
+> 	fun(inversa, &originalLU);
+> 
+> 
+> 
+218a244,246
+> 
+> 	
+> 	
+232,237c260
+< 	inversa.tam = n; 
+< 	if(alocaMatrizQuadrada(&inversa) == -1) {
+< 		fprintf(stderr, "[main] Erro ao alocar a matriz inversa\n");
+< 		return -1;
+< 	} 
+< 
+---
+> 	
+238a262,263
+> 	for (int i = 0; i < n*n; ++i)
+> 		inversa.dados[i] = 0;
+275c300
+< 	imprimeMatrizTransposta (inversa, out);
+---
+> 	imprimeMatrizTransposta(inversa, out);
+295c320
+< int fatoracaoLU (MATRIZ * restrict matriz, int * restrict trocas) {
+---
+> int fatoracaoLU (MATRIZ *  matriz, int *  trocas) {
+321c346
+< void substituicao_Lyb (MATRIZ L, MATRIZ * restrict y, double *b) {
+---
+> void substituicao_Lyb (MATRIZ L, MATRIZ * y, double *b) {
+336c361
+< 				y->dados[pos(sl, lin, tam)] -= L.dados[pos(lin, col, tam)]*y->dados[pos(sl, col, tam)];
+---
+> 				y->dados[pos(sl, lin, tam)] -= L.dados[LUpos(lin, col, tam)]*y->dados[pos(sl, col, tam)];
+344c369
+< int substituicao_Uxy (MATRIZ U, MATRIZ * restrict y, double * restrict b) {
+---
+> int substituicao_Uxy (MATRIZ U, MATRIZ *y, double *b) {
+357c382
+< 		if(U.dados[pos(tam-1, tam-1, tam)] == 0) {
+---
+> 		if(U.dados[LUpos(tam-1, tam-1, tam)] == 0) {
+362c387
+< 		y->dados[pos(i,tam-1,tam)] = (b[tam-1]*1.0)/U.dados[pos(tam-1, tam-1, tam)];
+---
+> 		y->dados[pos(i,tam-1,tam)] = (b[tam-1]*1.0)/U.dados[LUpos(tam-1, tam-1, tam)];
+366,367c391,392
+< 				y->dados[pos(i,k,tam)] -= U.dados[pos(k,j,tam)]*y->dados[pos(i,j,tam)];
+< 			if(U.dados[pos(k,k,tam)] == 0) {
+---
+> 				y->dados[pos(i,k,tam)] -= U.dados[LUpos(k,j,tam)]*y->dados[pos(i,j,tam)];
+> 			if(U.dados[LUpos(k,k,tam)] == 0) {
+371c396
+< 			y->dados[pos(i,k,tam)]=(y->dados[pos(i,k,tam)]*1.0)/U.dados[pos(k,k,tam)];
+---
+> 			y->dados[pos(i,k,tam)]=(y->dados[pos(i,k,tam)]*1.0)/U.dados[LUpos(k,k,tam)];
+380c405
+< int refinamento(MATRIZ A, MATRIZ * restrict inv_A, MATRIZ LU, double * restrict aux, int iter, double *tempoIter, double *tempoResiduo) {
+---
+> int refinamento(MATRIZ A, MATRIZ *inv_A, MATRIZ LU, double *aux, int iter, double *tempoIter, double *tempoResiduo) {
+411c436
+< int calculaResiduo(MATRIZ A, MATRIZ inv_A, MATRIZ * restrict R, int iter, double *tempoResiduo) {
+---
+> int calculaResiduo(MATRIZ A, MATRIZ inv_A, MATRIZ * R, int iter, double *tempoResiduo) {
+462c487
+<             printf("%s%.20lf ",C>=0?" ":"",C );
+---
+>             printf("%s%.0lf ",C>=0?" ":"",C );
+465a491,504
+> }
+> 
+> inline int LUpos (int lin, int col, int tam) {
+> 
+> 	int a;
+> 	if (lin <= col)
+> 		a = (((tam+tam-lin+1)*lin)/2 + col - lin);
+> 	else
+> 		a = (((tam*(tam+1))/2) + ((lin-1)*lin)/2 + col);
+> 	/*printf("%d %d\n",lin, col );
+> 	printf("%d\n",a );
+> 	printf("\n");*/
+> 	return a;
+> 

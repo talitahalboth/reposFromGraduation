@@ -1,0 +1,208 @@
+# Job id 0
+# Devices visible to TensorFlow: [_DeviceAttributes(/job:localhost/replica:0/task:0/device:CPU:0, CPU, 268435456, 3110109053965892936), _DeviceAttributes(/job:localhost/replica:0/task:0/device:XLA_CPU:0, XLA_CPU, 17179869184, 6265819606900080233)]
+# Vocab file tmp/iwslt15/vocab.vi exists
+# Vocab file tmp/iwslt15/vocab.en exists
+  saving hparams to tmp/nmt_attention_model_VI_s500_l2_u256/hparams
+  saving hparams to tmp/nmt_attention_model_VI_s500_l2_u256/best_bleu/hparams
+  attention=scaled_luong
+  attention_architecture=standard
+  avg_ckpts=False
+  batch_size=128
+  beam_width=0
+  best_bleu=0
+  best_bleu_dir=tmp/nmt_attention_model_VI_s500_l2_u256/best_bleu
+  check_special_token=True
+  colocate_gradients_with_ops=True
+  coverage_penalty_weight=0.0
+  decay_scheme=
+  dev_prefix=tmp/iwslt15/tst2012
+  dropout=0.2
+  embed_prefix=None
+  encoder_type=uni
+  eos=</s>
+  epoch_step=0
+  forget_bias=1.0
+  infer_batch_size=32
+  infer_mode=greedy
+  init_op=uniform
+  init_weight=0.1
+  language_model=False
+  learning_rate=1.0
+  length_penalty_weight=0.0
+  log_device_placement=False
+  max_gradient_norm=5.0
+  max_train=0
+  metrics=['bleu']
+  num_buckets=5
+  num_dec_emb_partitions=0
+  num_decoder_layers=2
+  num_decoder_residual_layers=0
+  num_embeddings_partitions=0
+  num_enc_emb_partitions=0
+  num_encoder_layers=2
+  num_encoder_residual_layers=0
+  num_gpus=1
+  num_inter_threads=0
+  num_intra_threads=0
+  num_keep_ckpts=5
+  num_sampled_softmax=0
+  num_train_steps=500
+  num_translations_per_input=1
+  num_units=256
+  optimizer=sgd
+  out_dir=tmp/nmt_attention_model_VI_s500_l2_u256
+  output_attention=True
+  override_loaded_hparams=False
+  pass_hidden_state=True
+  random_seed=None
+  residual=False
+  sampling_temperature=0.0
+  share_vocab=False
+  sos=<s>
+  src=vi
+  src_embed_file=
+  src_max_len=50
+  src_max_len_infer=None
+  src_vocab_file=tmp/iwslt15/vocab.vi
+  src_vocab_size=7709
+  steps_per_external_eval=None
+  steps_per_stats=100
+  subword_option=
+  test_prefix=tmp/iwslt15/tst2013
+  tgt=en
+  tgt_embed_file=
+  tgt_max_len=50
+  tgt_max_len_infer=None
+  tgt_vocab_file=tmp/iwslt15/vocab.en
+  tgt_vocab_size=17191
+  time_major=True
+  train_prefix=tmp/iwslt15/train
+  unit_type=lstm
+  use_char_encode=False
+  vocab_prefix=tmp/iwslt15/vocab
+  warmup_scheme=t2t
+  warmup_steps=0
+# Creating train graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  learning_rate=1, warmup_steps=0, warmup_scheme=t2t
+  decay_scheme=, start_decay_step=500, decay_steps 0, decay_factor 1
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (7709, 256), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 256), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (256, 256), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (768, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (512, 256), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (256, 17191), /device:GPU:0
+# Creating eval graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (7709, 256), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 256), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (256, 256), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (768, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (512, 256), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (256, 17191), /device:GPU:0
+# Creating infer graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  decoder: infer_mode=greedybeam_width=0, length_penalty=0.000000, coverage_penalty=0.000000
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (7709, 256), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 256), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (256, 256), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (768, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (512, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (1024,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (512, 256), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (256, 17191), 
+# log_file=tmp/nmt_attention_model_VI_s500_l2_u256/log_1574885175
+  created train model with fresh parameters, time 0.16s
+  created infer model with fresh parameters, time 0.10s
+  # 254
+    src: và vì thế , chúng ta đã chẳng hiểu được điều đó có ý nghĩa như thế nào
+    ref: And because of that , we really haven &apos;t understood what it &apos;s meant to do the things we &apos;ve done historically .
+    nmt: hide hide psychiatrist Homer Homer legislation legislation legislation legislation colonies poetic poetic poetic poetic poetic Pimp Pimp poetic reaches reaches reaches dangerous dangerous dangerous dangerous proxy shipped shipped shipped shipped shipped shipped fertilized fertilized fertilized fertilized
+  created eval model with fresh parameters, time 0.10s
+  eval dev: perplexity 17223.57, time 9s, Wed Nov 27 17:06:25 2019.
+  eval test: perplexity 17255.46, time 8s, Wed Nov 27 17:06:34 2019.
+  created infer model with fresh parameters, time 0.08s
+# Start step 0, lr 1, Wed Nov 27 17:06:34 2019
+# Init train iterator, skipping 0 elements
+  step 100 lr 1 step-time 1.70s wps 3.26K ppl 55676.39 gN 166.03 bleu 0.00, Wed Nov 27 17:09:23 2019
+  step 200 lr 1 step-time 1.66s wps 3.44K ppl 6765.40 gN 662.21 bleu 0.00, Wed Nov 27 17:12:10 2019
+  step 300 lr 1 step-time 1.63s wps 3.41K ppl 845.03 gN 14.37 bleu 0.00, Wed Nov 27 17:14:53 2019
+  step 400 lr 1 step-time 1.63s wps 3.46K ppl 557.35 gN 11.47 bleu 0.00, Wed Nov 27 17:17:36 2019
+  step 500 lr 1 step-time 1.62s wps 3.48K ppl 466.37 gN 8.94 bleu 0.00, Wed Nov 27 17:20:18 2019
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s500_l2_u256/translate.ckpt-500, time 4.66s
+  # 45
+    src: Mẹ tôi tối nào cũng kiệt sức , nhưng chúng tôi kể cho nhau nghe chuyện trong ngày và nghe tiếng bà tôi đi lại quanh nhà .
+    ref: My mother was exhausted each night , but we told one another about our day and listened to the movements of my grandmother around the house .
+    nmt: We the the <unk> of the <unk> of the <unk> of the <unk> of the <unk> of the <unk> .
+  loaded eval model parameters from tmp/nmt_attention_model_VI_s500_l2_u256/translate.ckpt-500, time 0.06s
+  eval dev: perplexity 304.95, time 8s, Wed Nov 27 17:20:36 2019.
+  eval test: perplexity 355.69, time 8s, Wed Nov 27 17:20:45 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s500_l2_u256/translate.ckpt-500, time 0.05s
+# External evaluation, global step 500
+  decoding to output tmp/nmt_attention_model_VI_s500_l2_u256/output_dev
+  done, num sentences 1553, num translations per input 1, time 23s, Wed Nov 27 17:21:08 2019.
+  bleu dev: 0.0
+  saving hparams to tmp/nmt_attention_model_VI_s500_l2_u256/hparams
+# External evaluation, global step 500
+  decoding to output tmp/nmt_attention_model_VI_s500_l2_u256/output_test
+  done, num sentences 1268, num translations per input 1, time 21s, Wed Nov 27 17:21:30 2019.
+  bleu test: 0.0
+  saving hparams to tmp/nmt_attention_model_VI_s500_l2_u256/hparams
+# Final, step 500 lr 1 step-time 1.62s wps 3.48K ppl 466.37 gN 8.94 dev ppl 304.95, dev bleu 0.0, test ppl 355.69, test bleu 0.0, Wed Nov 27 17:21:30 2019
+# Done training!, time 896s, Wed Nov 27 17:21:30 2019.
+# Start evaluating saved best models.
+  created infer model with fresh parameters, time 0.09s
+  # 376
+    src: Ông cứ đi tới đi lui .
+    ref: He kept pacing back and forth .
+    nmt: crazy crazy crazy nail nail nail nail carriage smelling smelling smelling smelling smelling settling
+  created eval model with fresh parameters, time 0.10s
+  eval dev: perplexity 17198.89, time 8s, Wed Nov 27 17:21:39 2019.
+  eval test: perplexity 17215.58, time 8s, Wed Nov 27 17:21:48 2019.
+  created infer model with fresh parameters, time 0.09s
+  bleu dev: 0.0
+  bleu test: 0.0
+# Best bleu, step 0 lr 1 step-time 1.62s wps 3.48K ppl 466.37 gN 8.94 dev ppl 17198.89, dev bleu 0.0, test ppl 17215.58, test bleu 0.0, Wed Nov 27 17:21:48 2019

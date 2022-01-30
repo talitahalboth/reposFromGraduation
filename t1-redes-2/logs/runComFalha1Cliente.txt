@@ -1,0 +1,111 @@
+=============================================================================
+Inicio da Execução: programa que implementa um servidor sobre TCP
+Stephanie Briere Americo e Talita Halboth Cunha Fernandes
+Disciplina de Redes II
+=============================================================================
+----------------------
+Log type: Info
+Source: main
+Mensagem: Iniciando cliente
+----------------------
+----------------------
+Log type: Info
+Source: main
+Mensagem: Conectando com servidor
+----------------------
+----------------------
+Log type: Info
+Source: main
+Mensagem: Conectado
+----------------------
+----------------------
+Log type: Info
+Source: RetrievePublicKey
+Mensagem: esperando p
+----------------------
+----------------------
+Log type: Info
+Source: RetrievePublicKey
+Mensagem: Mensagem recebida: 2293-
+----------------------
+----------------------
+Log type: Info
+Source: RetrievePublicKey
+Mensagem: p recebido, 2293
+----------------------
+----------------------
+Log type: Info
+Source: RetrievePublicKey
+Mensagem: esperando g
+----------------------
+----------------------
+Log type: Info
+Source: RetrievePublicKey
+Mensagem: Mensagem recebida: 2-2084-
+----------------------
+----------------------
+Log type: Info
+Source: RetrievePublicKey
+Mensagem: g recebido, 2
+----------------------
+----------------------
+Log type: Info
+Source: RetrievePublicKey
+Mensagem: x recebido, 2084
+----------------------
+----------------------
+Log type: Info
+Source: main
+Mensagem: y enviado, 2101
+----------------------
+----------------------
+Log type: Success
+Source: main
+Mensagem: Chave secreta calculada: 1877
+----------------------
+Digite a mensagem a ser enviada:
+Ola, servidor! 
+----------------------
+Log type: Info
+Source: SendEncryptedMessage
+Mensagem: Mensagem descriptografada binaria:
+b'WU\xe3\x11S\xb2\xef\x19\xf5\x9c\x8anK,\x18pOla, servidor!\x00\x00'
+----------------------
+----------------------
+Log type: Info
+Source: SendEncryptedMessage
+Mensagem: Mensagem criptografada:
+b'\xe3\x84-o2\x14\xf3\xc3\x1a[r?\x8a\x01^6\xb29\xd1\xf3\x1a\xecL]\xf8\x049q\xc0\x08x\x89'
+----------------------
+----------------------
+Log type: Info
+Source: SendEncryptedMessage
+Mensagem: Mensagem enviada
+----------------------
+----------------------
+Log type: Info
+Source: ReceiveEncryptedMessage
+Mensagem: Esperando mensagem
+----------------------
+----------------------
+Log type: Info
+Source: ReceiveEncryptedMessage
+Mensagem: Mensagem recebida: b'{\xce\x99\x92\xeai:\x8eO\xb7\xa2\x10\x89y\xa3\x81\xc1\xa5\xb3G\xfd\x10\xa7\xd4\x99\xb9\xee\t\xcfa\xcea"\x06X\xab%\\\x99+\x92vG\xe3\xa9\x90EP'
+----------------------
+----------------------
+Log type: Info
+Source: ReceiveEncryptedMessage
+Mensagem: Mensagem descriptografada binaria:
+b'L\x82\xb0~\xac\xc5\xd9A\x8d\x0e:\xef7\xb5(\xda\x8fow0G\x9e\xd28\x91\x7f\xfe83\xd6\xa5\x85|\xc1\xdf\xacr\xe6\x8b\x90~2.4O\xc852'
+----------------------
+----------------------
+Log type: Error
+Source: CheckHeader
+Mensagem: Checksum MD5 não confere!
+----------------------
+----------------------
+Log type: Error
+Source: ReceiveEncryptedMessage
+Mensagem: Erro ao descriptografar a mensagem
+----------------------
+Digite a mensagem a ser enviada:

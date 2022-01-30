@@ -1,0 +1,149 @@
+64c64
+< int fatoracaoLU (MATRIZ * __restrict matriz, int *trocas) ;
+---
+> int fatoracaoLU (MATRIZ *matriz, int *trocas) ;
+81c81
+< void substituicao_Lyb (MATRIZ L, MATRIZ * __restrict y, double * __restrict b);
+---
+> void substituicao_Lyb (MATRIZ L, MATRIZ *y, double *b);
+101c101
+< int substituicao_Uxy (MATRIZ U, MATRIZ * __restrict y, double * __restrict b);
+---
+> int substituicao_Uxy (MATRIZ U, MATRIZ *y, double *b);
+122c122
+< int refinamento(MATRIZ A, MATRIZ * __restrict inv_A, MATRIZ LU, double * __restrict aux, int iter, double *tempoIter, double *tempoResiduo);
+---
+> int refinamento(MATRIZ A, MATRIZ *inv_A, MATRIZ LU, double *aux, int iter, double *tempoIter, double *tempoResiduo);
+139c139
+< int calculaResiduo(MATRIZ A, MATRIZ inv_A, MATRIZ * __restrict R, int iter, double *tempoResiduo);
+---
+> int calculaResiduo(MATRIZ A, MATRIZ inv_A, MATRIZ *R, int iter, double *tempoResiduo);
+156a157
+> 
+161c162
+< 	int * __restrict trocas; // vetor que guarda historico do pivotamento
+---
+> 	int *trocas; // vetor que guarda historico do pivotamento
+206,207c207
+< 	unsigned int tam =  n +(4 - n%4);
+< 	for (unsigned int i = 0; i < tam*tam; ++i)
+---
+> 	for (int i = 0; i < n*n; ++i)
+255a256
+> 
+271c272
+< 		if (i != trocas[i]) trocaLinhas (&inversa, i, trocas[i]);
+---
+> 		if (i != trocas[i]) trocaColunas (&inversa, i, trocas[i]);
+277c278
+< 	fprintf(out, "# Tempo iter: %.17lf\n", (tempoIter/(iteracoes+1))); // tempo medio levado para calcular o S.L.
+---
+> 	fprintf(out, "# Tempo iter: %.17lf\n", tempoIter/(iteracoes+1)); // tempo medio levado para calcular o S.L.
+281c282
+< 	imprimeMatrizTransposta (inversa, out);
+---
+> 	imprimeMatriz(inversa, out);
+303c304
+< int fatoracaoLU (MATRIZ * __restrict matriz, int * __restrict trocas) {
+---
+> int fatoracaoLU (MATRIZ *matriz, int *trocas) {
+329c330
+< void substituicao_Lyb (MATRIZ L, MATRIZ * __restrict y, double *b) {
+---
+> void substituicao_Lyb (MATRIZ L, MATRIZ *y, double *b) {
+334c335
+< 	int tam = L.tam;
+---
+> 	unsigned int tam = L.tam;
+338c339
+< 				b[k] = y->dados[pos(sl,k,tam)];
+---
+> 				b[k] = y->dados[pos(k,sl,tam)];
+340c341
+< 		y->dados[pos(sl,0,tam)] = (b[0]*1.0);
+---
+> 		y->dados[pos(0,sl,tam)] = (b[0]*1.0);
+342c343
+< 			y->dados[pos(sl,lin,tam)] = b[lin];
+---
+> 			y->dados[pos(lin,sl,tam)] = b[lin];
+344c345
+< 				y->dados[pos(sl, lin, tam)] -= L.dados[pos(lin, col, tam)]*y->dados[pos(sl, col, tam)];
+---
+> 				y->dados[pos(lin, sl, tam)] -= L.dados[pos(lin, col, tam)]*y->dados[pos(col, sl, tam)];
+352c353
+< int substituicao_Uxy (MATRIZ U, MATRIZ * __restrict y, double * __restrict b) {
+---
+> int substituicao_Uxy (MATRIZ U, MATRIZ *y, double *b) {
+357c358
+< 	int tam = U.tam;
+---
+> 	unsigned int tam = U.tam;
+363c364
+< 			b[k] = y->dados[pos(i,k,tam)];
+---
+> 			b[k] = y->dados[pos(k,i,tam)];
+370c371
+< 		y->dados[pos(i,tam-1,tam)] = (b[tam-1]*1.0)/U.dados[pos(tam-1, tam-1, tam)];
+---
+> 		y->dados[pos(tam-1,i,tam)] = (b[tam-1]*1.0)/U.dados[pos(tam-1, tam-1, tam)];
+372c373
+< 			y->dados[pos(i,k,tam)] = b[k];
+---
+> 			y->dados[pos(k,i,tam)] = b[k];
+374c375
+< 				y->dados[pos(i,k,tam)] -= U.dados[pos(k,j,tam)]*y->dados[pos(i,j,tam)];
+---
+> 				y->dados[pos(k,i,tam)] -= U.dados[pos(k,j,tam)]*y->dados[pos(j,i,tam)];
+379c380
+< 			y->dados[pos(i,k,tam)]=(y->dados[pos(i,k,tam)]*1.0)/U.dados[pos(k,k,tam)];
+---
+> 			y->dados[pos(k,i,tam)]=(y->dados[pos(k,i,tam)]*1.0)/U.dados[pos(k,k,tam)];
+388c389
+< int refinamento(MATRIZ A, MATRIZ * __restrict inv_A, MATRIZ LU, double * __restrict aux, int iter, double *tempoIter, double *tempoResiduo) {
+---
+> int refinamento(MATRIZ A, MATRIZ *inv_A, MATRIZ LU, double *aux, int iter, double *tempoIter, double *tempoResiduo) {
+390c391
+< 	int tam = A.tam;
+---
+> 	unsigned int tam = A.tam;
+416c417
+< 		LIKWID_MARKER_STOP("OP1");
+---
+> 		LIKWID_MARKER_STOP("OP1");		
+429c430
+< int calculaResiduo(MATRIZ A, MATRIZ inv_A, MATRIZ * __restrict R, int iter, double *tempoResiduo) {
+---
+> int calculaResiduo(MATRIZ A, MATRIZ inv_A, MATRIZ *R, int iter, double *tempoResiduo) {
+431c432
+< 	int tam = A.tam;
+---
+> 	unsigned int tam = A.tam;
+434,435c435,437
+< 	for (int col = 0; col < tam; col++) {
+< 		for (int lin = 0; lin < tam; lin++) {
+---
+> 	for (int lin = 0; lin < tam; lin++) {
+> 		for (int col = 0; col < tam; col++) {
+> 			double soma = 0.0, c = 0.0;
+438c440,443
+< 				C+= A.dados[pos(lin,k,tam)]*inv_A.dados[pos(col,k,tam)];
+---
+> 				double y = A.dados[pos(lin,k,tam)]*inv_A.dados[pos(k,col,tam)] - c;
+> 				double t = soma + y;
+> 				c = (t - soma) - y;
+> 				soma = t;
+439a445
+> 			C = soma;
+441c447
+< 			R->dados[pos(col, lin, tam)] = C; // R = I - A*inv_A
+---
+> 			R->dados[pos(lin, col, tam)] = C; // R = I - A*inv_A
+473c479
+<                 C += A.dados[pos(i,k,A.tam)]*B.dados[pos(j,k,B.tam)];
+---
+>                 C += A.dados[pos(i,k,A.tam)]*B.dados[pos(k,j,B.tam)];
+475c481
+<             printf("%.0lf ",C>=0?C:-C );
+---
+>             printf("%s%.20lf ",C>=0?" ":"",C );

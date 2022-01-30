@@ -1,0 +1,18 @@
+
+ Metrics		Access Type:
+ (totals,fraction)	Total      Instrn     Data       Read       Write      Misc
+ -----------------	---------  ---------  ---------  ---------  ---------  ------
+ Demand Fetches		 30892450          0   30892450   19764298   11128152       0
+ din_dem		   1.0000     0.0000     1.0000     0.6398     0.3602  0.0000
+
+ Demand Misses		   403102          0     403102     363261      39841       0
+ din_dmm		   0.0130     0.0000     0.0130     0.0184     0.0036  0.0000
+
+ Words From Memory	  6449632
+ ( / Demand Fetches)	   0.2088
+ Words Copied-Back	  2643232
+ ( / Demand Writes)	   0.2375
+ Total Traffic (words)	  9092864
+ ( / Demand Fetches)	   0.2943
+ Specials -- context switches: 0   flushes: 0
+

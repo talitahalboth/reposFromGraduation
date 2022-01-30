@@ -1,0 +1,218 @@
+# Job id 0
+# Devices visible to TensorFlow: [_DeviceAttributes(/job:localhost/replica:0/task:0/device:CPU:0, CPU, 268435456, 17328137253936658719), _DeviceAttributes(/job:localhost/replica:0/task:0/device:XLA_CPU:0, XLA_CPU, 17179869184, 10570056052926818670)]
+# Creating output directory tmp/nmt_attention_model_VI_s600_l2_u64 ...
+# Vocab file tmp/iwslt15/vocab.vi exists
+# Vocab file tmp/iwslt15/vocab.en exists
+  saving hparams to tmp/nmt_attention_model_VI_s600_l2_u64/hparams
+  saving hparams to tmp/nmt_attention_model_VI_s600_l2_u64/best_bleu/hparams
+  attention=scaled_luong
+  attention_architecture=standard
+  avg_ckpts=False
+  batch_size=128
+  beam_width=0
+  best_bleu=0
+  best_bleu_dir=tmp/nmt_attention_model_VI_s600_l2_u64/best_bleu
+  check_special_token=True
+  colocate_gradients_with_ops=True
+  coverage_penalty_weight=0.0
+  decay_scheme=
+  dev_prefix=tmp/iwslt15/tst2012
+  dropout=0.2
+  embed_prefix=None
+  encoder_type=uni
+  eos=</s>
+  epoch_step=0
+  forget_bias=1.0
+  infer_batch_size=32
+  infer_mode=greedy
+  init_op=uniform
+  init_weight=0.1
+  language_model=False
+  learning_rate=1.0
+  length_penalty_weight=0.0
+  log_device_placement=False
+  max_gradient_norm=5.0
+  max_train=0
+  metrics=['bleu']
+  num_buckets=5
+  num_dec_emb_partitions=0
+  num_decoder_layers=2
+  num_decoder_residual_layers=0
+  num_embeddings_partitions=0
+  num_enc_emb_partitions=0
+  num_encoder_layers=2
+  num_encoder_residual_layers=0
+  num_gpus=1
+  num_inter_threads=0
+  num_intra_threads=0
+  num_keep_ckpts=5
+  num_sampled_softmax=0
+  num_train_steps=600
+  num_translations_per_input=1
+  num_units=64
+  optimizer=sgd
+  out_dir=tmp/nmt_attention_model_VI_s600_l2_u64
+  output_attention=True
+  override_loaded_hparams=False
+  pass_hidden_state=True
+  random_seed=None
+  residual=False
+  sampling_temperature=0.0
+  share_vocab=False
+  sos=<s>
+  src=vi
+  src_embed_file=
+  src_max_len=50
+  src_max_len_infer=None
+  src_vocab_file=tmp/iwslt15/vocab.vi
+  src_vocab_size=7709
+  steps_per_external_eval=None
+  steps_per_stats=100
+  subword_option=
+  test_prefix=tmp/iwslt15/tst2013
+  tgt=en
+  tgt_embed_file=
+  tgt_max_len=50
+  tgt_max_len_infer=None
+  tgt_vocab_file=tmp/iwslt15/vocab.en
+  tgt_vocab_size=17191
+  time_major=True
+  train_prefix=tmp/iwslt15/train
+  unit_type=lstm
+  use_char_encode=False
+  vocab_prefix=tmp/iwslt15/vocab
+  warmup_scheme=t2t
+  warmup_steps=0
+# Creating train graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  learning_rate=1, warmup_steps=0, warmup_scheme=t2t
+  decay_scheme=, start_decay_step=600, decay_steps 0, decay_factor 1
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (7709, 64), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 64), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (128, 256), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (256,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (128, 256), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (256,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (64, 64), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (192, 256), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (256,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (128, 256), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (256,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (128, 64), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (64, 17191), /device:GPU:0
+# Creating eval graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (7709, 64), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 64), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (128, 256), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (256,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (128, 256), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (256,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (64, 64), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (192, 256), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (256,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (128, 256), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (256,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (128, 64), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (64, 17191), /device:GPU:0
+# Creating infer graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  decoder: infer_mode=greedybeam_width=0, length_penalty=0.000000, coverage_penalty=0.000000
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (7709, 64), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 64), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (128, 256), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (256,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (128, 256), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (256,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (64, 64), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (192, 256), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (256,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (128, 256), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (256,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (128, 64), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (64, 17191), 
+# log_file=tmp/nmt_attention_model_VI_s600_l2_u64/log_1574956851
+  created train model with fresh parameters, time 0.18s
+  created infer model with fresh parameters, time 0.10s
+  # 688
+    src: Và đó là thông điệp tôi thấm nhuần khi tôi học trường y .
+    ref: And that was the message that I absorbed when I was in med school .
+    nmt: five-year-old artillery let let dissect dissect dissect Pollock Pollock mammalian mammalian three-digit three-digit three-digit &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; limestone limestone
+  created eval model with fresh parameters, time 0.10s
+  eval dev: perplexity 17191.16, time 3s, Thu Nov 28 13:00:55 2019.
+  eval test: perplexity 17191.15, time 3s, Thu Nov 28 13:00:58 2019.
+  created infer model with fresh parameters, time 0.09s
+# Start step 0, lr 1, Thu Nov 28 13:00:58 2019
+# Init train iterator, skipping 0 elements
+  step 100 lr 1 step-time 0.51s wps 10.74K ppl 17228.68 gN 63.05 bleu 0.00, Thu Nov 28 13:01:50 2019
+  step 200 lr 1 step-time 0.45s wps 12.57K ppl 1008.90 gN 13.73 bleu 0.00, Thu Nov 28 13:02:35 2019
+  step 300 lr 1 step-time 0.45s wps 12.51K ppl 556.39 gN 6.88 bleu 0.00, Thu Nov 28 13:03:20 2019
+  step 400 lr 1 step-time 0.44s wps 12.57K ppl 460.23 gN 5.72 bleu 0.00, Thu Nov 28 13:04:05 2019
+  step 500 lr 1 step-time 0.45s wps 12.52K ppl 395.87 gN 5.35 bleu 0.00, Thu Nov 28 13:04:50 2019
+  step 600 lr 1 step-time 0.45s wps 12.61K ppl 332.85 gN 4.59 bleu 0.00, Thu Nov 28 13:05:34 2019
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s600_l2_u64/translate.ckpt-600, time 0.07s
+  # 193
+    src: Ông ngoại tôi đã ở tù suốt thời kỳ cấm nấu và bán rượu ,
+    ref: My grandfather was in prison during prohibition .
+    nmt: And &apos;s , I have , and I have , and I have .
+  loaded eval model parameters from tmp/nmt_attention_model_VI_s600_l2_u64/translate.ckpt-600, time 0.07s
+  eval dev: perplexity 275.97, time 3s, Thu Nov 28 13:05:38 2019.
+  eval test: perplexity 300.28, time 3s, Thu Nov 28 13:05:42 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s600_l2_u64/translate.ckpt-600, time 0.05s
+# External evaluation, global step 600
+  decoding to output tmp/nmt_attention_model_VI_s600_l2_u64/output_dev
+  done, num sentences 1553, num translations per input 1, time 12s, Thu Nov 28 13:05:54 2019.
+  bleu dev: 0.2
+  saving hparams to tmp/nmt_attention_model_VI_s600_l2_u64/hparams
+# External evaluation, global step 600
+  decoding to output tmp/nmt_attention_model_VI_s600_l2_u64/output_test
+  done, num sentences 1268, num translations per input 1, time 13s, Thu Nov 28 13:06:09 2019.
+  bleu test: 0.4
+  saving hparams to tmp/nmt_attention_model_VI_s600_l2_u64/hparams
+# Final, step 600 lr 1 step-time 0.45s wps 12.61K ppl 332.85 gN 4.59 dev ppl 275.97, dev bleu 0.2, test ppl 300.28, test bleu 0.4, Thu Nov 28 13:06:09 2019
+# Done training!, time 310s, Thu Nov 28 13:06:09 2019.
+# Start evaluating saved best models.
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s600_l2_u64/best_bleu/translate.ckpt-600, time 0.06s
+  # 1110
+    src: Tôi đang ngồi đây nói ra những tiếng lẩm bẩm , hy vọng tạo ra trong đầu mọi người một suy nghĩ cũng hỗn độn và mơ hồ và có đôi chút tương tự như suy nghĩ của tôi .
+    ref: I &apos;m sitting here making grunting sounds basically , and hopefully constructing a similar messy , confused idea in your head that bears some analogy to it .
+    nmt: I have , I have , I have , and I have , and I have , and I have , and I have , and I have , and I have , and I have , and I have .
+  loaded eval model parameters from tmp/nmt_attention_model_VI_s600_l2_u64/best_bleu/translate.ckpt-600, time 0.06s
+  eval dev: perplexity 275.97, time 3s, Thu Nov 28 13:06:13 2019.
+  eval test: perplexity 300.28, time 3s, Thu Nov 28 13:06:16 2019.
+  loaded infer model parameters from tmp/nmt_attention_model_VI_s600_l2_u64/best_bleu/translate.ckpt-600, time 0.05s
+# External evaluation, global step 600
+  decoding to output tmp/nmt_attention_model_VI_s600_l2_u64/output_dev
+  done, num sentences 1553, num translations per input 1, time 12s, Thu Nov 28 13:06:29 2019.
+  bleu dev: 0.2
+  saving hparams to tmp/nmt_attention_model_VI_s600_l2_u64/hparams
+# External evaluation, global step 600
+  decoding to output tmp/nmt_attention_model_VI_s600_l2_u64/output_test
+  done, num sentences 1268, num translations per input 1, time 13s, Thu Nov 28 13:06:42 2019.
+  bleu test: 0.4
+  saving hparams to tmp/nmt_attention_model_VI_s600_l2_u64/hparams
+# Best bleu, step 600 lr 1 step-time 0.45s wps 12.61K ppl 332.85 gN 4.59 dev ppl 275.97, dev bleu 0.2, test ppl 300.28, test bleu 0.4, Thu Nov 28 13:06:43 2019

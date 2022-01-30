@@ -1,0 +1,147 @@
+﻿Stephanie Briere Americo
+GRR20165313 
+Talita Halboth Cunha Fernandes
+GRR20165399
+
+Parte 2
+
+Ideia de modificação do programa
+
+Originalmente, nós pensamos em simplesmente tratar os tipos criados (type) como tipos originais (e.g. integer), mas logo percebemos que isso inviabilizaria a comparação entre os níveis. Por exemplo, para entender que banana é compatível com integer, precisamos de um nível de informação a mais no tipo banana que nos dê esse conhecimento.
+        A solução foi criar uma estrutura que represente os tipos criados (type) e modificar a função de validação de tipos (checaTipos) para incluir essa verificação especial para tipos criados, que é um pouco mais complexa que validar tipos originais (mais informações abaixo).
+Modificações realizadas no código do compilador
+As principais modificações no código foram relacionadas à declaração e ao tratamento de tipos. As tabelas abaixo representam um recorte dos principais trechos que foram modificados no código do compilador, bem como uma breve descrição da solução.
+Foi criada uma struct para representar um type, contendo valor, identificador do subtipo (0 para desconhecido, 1 para integer e 2 para boolean) e nome.
+
+typedef struct tipos_t
+{
+        int valor;
+        int ValorsubTipo;
+        char nome[TAMANHO_IDENTIFICADOR];
+} tipos;
+	
+
+No arquivo compilador.y, a regra parte_declara_tipos_helper foi adicionada ao bloco, quatro novas regras foram inseridas (Tabela 1) para tratar a sintaxe de declaração de tipos:
+
+parte_declara_tipos_helper:
+   | parte_declara_tipos
+;
+
+parte_declara_tipos:
+   TYPE definicao_tipo_helper PONTO_E_VIRGULA
+;
+
+definicao_tipo_helper:
+   definicao_tipo
+   | definicao_tipo_helper PONTO_E_VIRGULA definicao_tipo   
+;
+
+definicao_tipo:
+   IDENT
+   {
+       strcpy(l_oper, token);
+   }
+   IGUAL
+   IDENT
+   {
+       for (int i = 0; i < taMvetorDeTipos; ++i)
+       {
+           if (!strcmp(vetorDeTipos[i].nome, l_oper))
+           {
+               char str[DEFAULT_STRING_LENGTH];
+               sprintf(str, "Tipo ja declarado: %s", l_oper);
+               imprimeErro(str);
+           }
+       }
+       int existe=0;
+       for (int i = 0; i < taMvetorDeTipos; ++i)
+       {
+           if (!strcmp(vetorDeTipos[i].nome, token))
+           {
+               existe = 1;
+               vetorDeTipos[taMvetorDeTipos].valor = taMvetorDeTipos;
+               vetorDeTipos[taMvetorDeTipos].ValorsubTipo = vetorDeTipos[i].valor;
+               strcpy(vetorDeTipos[taMvetorDeTipos].nome, l_oper);
+               strcpy(valorTipoPraString[taMvetorDeTipos], l_oper);
+               controleSubtipo[taMvetorDeTipos] = vetorDeTipos[taMvetorDeTipos].ValorsubTipo;            
+               taMvetorDeTipos++;
+           }
+       }
+   }
+;
+	
+
+        A função checaTipos verifica se operandos envolvidos em uma operação possuem tipos compatíveis. Essa função foi alterada para incluir a verificação de tipos criados (types). Basicamente, cada tipo criado (type) possui um subtipo do qual foi baseado (e.g. integer) e as únicas operações válidas são entre tipos iguais (e.g. banana e banana) ou subtipos compatíveis com tipos padrões (e.g. banana e integer):
+
+void checaTipos()
+{
+   if (typesStack.topo && 
+       typesStack.elementos[typesStack.topo] != typesStack.elementos[typesStack.topo-1] )
+   {
+       int tipo1, tipo2;
+       tipo1 = typesStack.elementos[typesStack.topo];
+       tipo2 = typesStack.elementos[typesStack.topo-1];
+       // tests if subtype match type (or the other way around)
+       if (controleSubtipo[tipo1] == tipo2 || controleSubtipo[tipo2] == tipo1)
+       {
+
+           removeElemento(&typesStack, 2);
+           insereElemento(&typesStack, controleSubtipo[tipo1] );
+           return;
+       }
+       char str[DEFAULT_STRING_LENGTH];
+       sprintf(str, "Tipos incompativeis: %s/%s", 
+       tabelaTipos(typesStack.elementos[typesStack.topo]),
+       tabelaTipos(typesStack.elementos[typesStack.topo-1]));      
+       imprimeErro(str);
+   }
+   removeElemento(&typesStack, 1);
+
+}
+	
+
+        Por fim, no Main foram incluídos trechos de inicialização dos vetores de controle. Nós usamos basicamente dois vetores: vetorDeTipos e valorTipoParaString. O vetorDeTipos tem a função de guardar os types criados, enquanto o valorTipoParaString apenas mapeia o valor do subtipo para a string correspondente, tornando possível apresentar mensagens de erros mais descritivas (e.g. “Erro na linha 13 - Tipos incompatíveis: laranja/banana”).
+
+   vetorDeTipos[0].valor = 0;
+   vetorDeTipos[0].ValorsubTipo = 0;
+   strcpy(vetorDeTipos[0].nome, "desconhecido");
+   vetorDeTipos[1].valor = 1;
+   vetorDeTipos[1].ValorsubTipo = 1;
+   strcpy(vetorDeTipos[1].nome, "integer");
+   vetorDeTipos[2].valor = 2;
+   vetorDeTipos[2].ValorsubTipo = 2;
+   strcpy(vetorDeTipos[2].nome, "boolean");
+   taMvetorDeTipos=3;
+   controleSubtipo[0]=0;
+   controleSubtipo[1]=1;
+   controleSubtipo[2]=2;
+   strcpy(valorTipoPraString[0], "desconhecido");
+   strcpy(valorTipoPraString[1], "integer");
+   strcpy(valorTipoPraString[2], "boolean");
+
+
+Maiores problemas ao implementar Type
+
+A parte que precisou de mais atenção foi na verificação dos tipos e subtipos para determinar se as operações são válidas (função checaTipos). Além de verificar se os tipos são iguais, como era feito até então, agora é preciso verificar a compatibilidade dos tipos originais com os tipos criados (e.g. banana e integer) e a incompatibilidade entre os tipos criados (e.g. banana e morango).
+
+Parte 3
+
+
+Principais dificuldades no desenvolvimento do compilador
+
+Os pontos que geraram maior dúvida e demandaram maior tempo para resolver:
+* Sinal negativo antes de expressão: a solução foi empilhar a constante 0, depois empilhar o valor e realizar uma subtração para obter o valor negativo.
+* Parâmetros passados por referência: fazer o uso correto de CRVL, CRVI e CREN foi um desafio.
+* Procedimentos/funções declarados dentro de outros procedimentos/funções: foi preciso considerar que ao entrar em um procedimento é necessário desviar o fluxo do programa para os comandos desse procedimento para evitar que outros procedimentos declarados dentro deste sejam executados primeiro.
+* Funções usadas como parâmetros ao chamar outras funções: foi necessário usar uma pilha para lidar com os parâmetros de cada função aninhada.
+
+
+Inclusão do comando record
+  
+
+Ao encontrar uma definição de record no código em pascal, o compilador deverá adicionar o nome do record à lista de tipos. Essa lista será definida no código do compilador como um struct com um campo eh_record que informa se o tipo declarado é um record e vetores campos_id para armazenar o identificador e campos_tipo para o tipo de cada campo filho do record.
+  
+Também é necessário incluir novos campos nos símbolos da tabela de símbolos: um que indica se o símbolo é um record (eh_record), quantos filhos tem (qtd_campos), um vetor que armazena os índices dos campos desse record (vetor_de_campos), um que indica se é campo filho de um record (eh_campo) e qual o índice na tabela de símbolos do record (indice_record) ao qual esse símbolo está atrelado. Ao encontrar uma variável com o tipo de um record, é preciso incluir um símbolo na tabela de símbolos para o record, e incluir símbolos para cada um dos campos que este tipo de record tem, com os nomes e tipos iguais aos definidos na definição record. [d]Deve-se levar em consideração que é permitido criar variáveis com o mesmo nome do campo de um record, então símbolos com eh_campo em 1 devem ser ignorados ao declarar variáveis.
+
+Nesse exemplo, serão incluídos três símbolos na tabela de símbolos: c (variável em si), x e y. É feito um AMEM para o número de campos do record (AMEM 2) e, após a declaração dos campos, o vetor_de_campos de c será atualizado. Na posição 0 e 1 ficam os endereços do primeiro e segundo campo: x e y. O qtd_campos é atualizado para 2 e eh_record recebe o valor 1. O indice_record de x e y recebe o endereço de c, o eh_campo recebe 1, os tipos podem ser encontrados procurando os tipos dos campos de coord no vetor de tipos, e o deslocamento é setado como se fossem adicionadas duas variáveis (var x, y : integer) ao invés de um record: se c for a primeira variável sendo declarada no programa principal (nível léxico 0), o nível léxico e deslocamento de c.x serão 0,0  e o de c.y serão 0,1. [e]
+Quando o campo de um record for acessado no código pascal, primeiro será necessário checar se esse campo existe para o record (usando o vetor de símbolos). Caso positivo, acessar o símbolo que tem este nome da tabela de símbolos e acessar a posição de memória normalmente (como é feito com variáveis de tipo integer, por exemplo). Para armazenar em c.x, usar ARMZ 0,0. O tipo do campo está definido no vetor de tipos.
